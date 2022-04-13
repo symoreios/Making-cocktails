@@ -1,3 +1,24 @@
 #navbar-yellow {
   background-color: #fad859;
 }
+
+.header {
+  height: auto;
+  text-align: center;
+}
+
+.welcome-img-div {
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.header-content {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: x-large;
+}
+
+.homepage-button-div {
+  text-align: center;
+}
