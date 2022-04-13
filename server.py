@@ -8,7 +8,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def hello_cocktail():
-    return "<p>Hello, Cocktail!</p>"
+    return render_template('home.html')
 
 
 if __name__ == '__main__':
