@@ -1,0 +1,59 @@
+{% extends "layout.html" %} {% block content %}
+<script>
+  let question = {{quiz_question|tojson}}
+  let responses = {{quiz_options|tojson}}
+</script>
+<script>
+  $(document).ready(function () {
+    // console.log(question["question"]);
+    let quiz_head = $(
+      "<div class='row'>  <div class='col-12'>" +
+        "Gin Rickey Quiz (" +
+        question["id"] +
+        "/7)" +
+        "</div> </div>"
+    );
+    $("#quiz_header").append(quiz_head);
+    let quiz_pic = $(
+      "<div class='row'> <div class='col-8'>  <img src='" +
+        question["image"] +
+        "'> </div> </div> "
+    );
+    $("#quiz_image").append(quiz_pic);
+    let quiz_question = $(
+      "<div class='row'>  <div class='col-12'>" +
+        question["question"] +
+        "</div> </div>"
+    );
+    $("#quiz_quest").append(quiz_question);
+    //  console.log(responses["response_list"]);
+    $.each(responses["response_list"], function (i, answer) {
+      let clickable_response = $(
+        "<div class='response_container'><button class='response_button' input type='button'>" +
+          answer +
+          "</button>"
+      );
+      let quiz_next_button = $(
+        "<div class='next_container'> <button class='next' input type='button'> Next </button>"
+      );
+      $("#quiz_responses").append(clickable_response);
+      $(clickable_response).click(function (e) {
+        let user_attempt = answer;
+        if (user_attempt == responses["answer"]) {
+          $("#quiz_header").append("Correct!");
+          $("#next_button").append(quiz_next_button);
+        }
+        $(quiz_next_button).click(function (e) {
+          let next_number = question["next_quiz"];
+          window.location.href = "/quiz/" + next_number;
+        });
+      });
+    });
+  });
+</script>
+<div id="quiz_header"></div>
+<div id="quiz_quest"></div>
+<div id="quiz_responses"></div>
+<div id="quiz_image"></div>
+<div id="next_button"></div>
+{% endblock %}

@@ -22,3 +22,23 @@
 .homepage-button-div {
   text-align: center;
 }
+
+#quiz_header {
+  text-align: center;
+  font-weight: bolder;
+  font-size: larger;
+}
+img {
+  max-width: 100%;
+}
+#quiz_image {
+  padding-left: 500px;
+}
+#quiz_responses {
+  width: 500px;
+}
+.next {
+  color: black;
+  background-color: red;
+  width: 20px;
+}
