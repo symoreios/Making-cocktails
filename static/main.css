@@ -37,8 +37,17 @@ img {
 #quiz_responses {
   width: 500px;
 }
-.next {
+.next_button {
   color: black;
   background-color: red;
-  width: 20px;
+  width: 50px;
+  padding-top: 5px;
+}
+
+.response_container {
+  padding: 10px;
+}
+
+.review {
+  background-color: yellow;
 }
