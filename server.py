@@ -5,7 +5,30 @@ from flask import render_template
 from flask import Response, request, jsonify
 
 app = Flask(__name__)
+learn_data ={
+    "2":{
+        "id" : "2",
+        "title": "Key ingredient: Club Soda",
+        "image": "https://cdn.pixabay.com/photo/2015/08/25/16/12/lime-907124_960_720.jpg", 
+        "content" : [
+            "One of the easiest mixers",
+            "Club soda dilutes the flavor of the spirit so you aren't drinking it straight, but still allows you to enjoy its unique flavors and aromas.",
+        ],
+    },
+    "3":{
+        "id" : "3",
+        "title": "Key Ingredient: Lemons and Limes",
+        "image": "https://cdn.pixabay.com/photo/2020/11/24/21/04/limes-5773933_960_720.jpg", 
+        "content" : [
+            "Fresh lemon and lime juice brings a tangy zing to many classic drinks",
+            "Lemon juice works in all seasons",
+            "You can make your own sour simply with equal parts of fresh lemon juice and simple syrup",
+            "Classic cocktails that use lemons and limes include: whiskey sour, long island iced tea, cosmopolitan cocktail"
+        ],
+    },
 
+}
+#-------------------------------------#
 quiz_questions = {
     "1": {
         "id": "1",
@@ -97,6 +120,13 @@ correct_answers = 0
 @app.route("/")
 def hello_cocktail():
     return render_template('home.html')
+
+
+@app.route("/learn/<id>")
+def learning(id=None):
+    global learn_data
+    datas = learn_data[id]
+    return render_template('learning.html',data=datas)
 
 
 @app.route("/quiz/<id>", methods=['GET', 'POST'])
