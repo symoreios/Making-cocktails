@@ -5,27 +5,125 @@ from flask import render_template
 from flask import Response, request, jsonify
 
 app = Flask(__name__)
-learn_data ={
-    "2":{
-        "id" : "2",
-        "title": "Key ingredient: Club Soda",
-        "image": "https://cdn.pixabay.com/photo/2015/08/25/16/12/lime-907124_960_720.jpg", 
-        "content" : [
+learn_data = {
+    "1": {
+        "id": "1",
+        "title": "Gin Rickey: An Overview",
+        "media": "https://zestfulkitchen.com/wp-content/uploads/2020/08/gin-rickey_for-web-4.jpg",
+        "content": [
+            "The gin rickey is for people who like tart, bracing cocktails.",
+            "With no sugar or simple syrup, this cocktail is quite sour, dry and exceptionally refreshing.",
+            "Use quality club soda. Fresh squeezed lime is also essential."
+        ],
+        "next": "2"
+    },
+    "2": {
+        "id": "2",
+        "title": "Key Ingredient: Club Soda",
+        "media": "https://cdn.pixabay.com/photo/2015/08/25/16/12/lime-907124_960_720.jpg",
+        "content": [
             "One of the easiest mixers",
             "Club soda dilutes the flavor of the spirit so you aren't drinking it straight, but still allows you to enjoy its unique flavors and aromas.",
         ],
+        "next": "3"
     },
-    "3":{
-        "id" : "3",
+    "3": {
+        "id": "3",
         "title": "Key Ingredient: Lemons and Limes",
-        "image": "https://cdn.pixabay.com/photo/2020/11/24/21/04/limes-5773933_960_720.jpg", 
-        "content" : [
+        "media": "https://suppliesforcandles.co.uk/4098/lemon-lime-fragrance-oil.jpg",
+        "content": [
             "Fresh lemon and lime juice brings a tangy zing to many classic drinks",
             "Lemon juice works in all seasons",
             "You can make your own sour simply with equal parts of fresh lemon juice and simple syrup",
             "Classic cocktails that use lemons and limes include: whiskey sour, long island iced tea, cosmopolitan cocktail"
         ],
+        "next": "4"
     },
+    "4": {
+        "id": "4",
+        "title": "Key Ingredient: Gin",
+        "media": "https://i.pinimg.com/originals/8e/c8/a1/8ec8a19b86d10e65b356c89e30af7fa6.png",
+        "content": [
+            "Gin is a distilled spirit that is made from grain and flavored with botanicals.",
+            "Herbal flavor marked with citrus and spices.",
+            "Most gin is dry with a noticeable pine flavor due to its main ingredient, juniper berries."
+        ],
+        "next": "5"
+    },
+    "5": {
+        "id": "5",
+        "title": "Definition: Highball",
+        "media": "https://www.thespruceeats.com/thmb/JIUbjPCnQzDzmkP7FlZu2_rjr5U=/566x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/highball-glasses-56a170215f9b58b7d0bf49d6.jpg",
+        "content": [
+            "Highball and Collins glasses are used for tall mixed drinks (“highballs”).",
+            "Quite often, the highball drinks are built directly in the glass by pouring the ingredients over ice and stirring to mix."
+        ],
+        "next": "6"
+    },
+    "6": {
+        "id": "6",
+        "title": "Gin Rickey Ingredients",
+        "media": "https://www.thespruceeats.com/thmb/KWN7q_rc54d5LvlRkOPCcndEQ6Q=/580x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/gin-rickey-recipe-760083-step-01-d519ccd29d134b07a6bf3517fe14cf01.jpg",
+        "content": [
+            "2 ounces gin",
+            "1/2 ounce lime juice, freshly squeezed",
+            "4 ounces club soda, or to taste",
+            "Lime wedges for garnish"
+        ],
+        "next": "7"
+    },
+    "7": {
+        "id": "7",
+        "title": "Gin Rickey Recipe: Step 1 of 4",
+        "media": "https://www.thespruceeats.com/thmb/zRbsCD6uzcbdUdlq1EAi3DfUsgQ=/580x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/gin-rickey-recipe-760083-step-02-0272d50d178040758c824161a89da920.jpg",
+        "content": [
+            "Fill a highball glass with ice.",
+        ],
+        "next": "8"
+    },
+    "8": {
+        "id": "8",
+        "title": "Gin Rickey Recipe: Step 2 of 4",
+        "media": "https://www.thespruceeats.com/thmb/ApAmbMAVANn4zOMe5dL_KZMS-GY=/580x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/gin-rickey-recipe-760083-step-03-46ae6b35304140fd8ade9add990663db.jpg",
+        "content": [
+            "Pour the gin and lime juice over the ice.",
+        ],
+        "next": "9"
+    },
+    "9": {
+        "id": "9",
+        "title": "Gin Rickey Recipe: Step 3 of 4",
+        "media": "https://www.thespruceeats.com/thmb/cRQRD5boRDWB2B0r-b8-m6eTU44=/580x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/gin-rickey-recipe-760083-step-04-ebe69350e4ae4ed7b812ece6512f7ba6.jpg",
+        "content": [
+            "Top with club soda."
+        ],
+        "next": "10"
+    },
+    "10": {
+        "id": "10",
+        "title": "Gin Rickey Recipe: 4 of 4",
+        "media": "https://www.thespruceeats.com/thmb/Gh79cWU0DFjfrcLJycKvjpnISuU=/580x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/gin-rickey-recipe-760083-step-06-c80b4fd308884159b7a9c715ed3158e5.jpg",
+        "content": [
+            "Garnish with a lime wedge. Serve and enjoy."
+        ],
+        "next": "11"
+    },
+    "11": {
+        "id": "11",
+        "title": "Gin Rickey Recipe Review",
+        "media": "https://www.thespruceeats.com/thmb/JIUbjPCnQzDzmkP7FlZu2_rjr5U=/566x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/highball-glasses-56a170215f9b58b7d0bf49d6.jpg",
+        "content": [
+            "2 ounces gin",
+            "1/2 ounce lime juice, freshly squeezed",
+            "4 ounces club soda, or to taste",
+            "Lime wedges for garnish",
+            "Fill a highball glass with ice.",
+            "Pour the gin and lime juice over the ice.",
+            "Top with club soda.",
+            "Garnish with a lime wedge. Serve and enjoy.",
+        ],
+        "next": "12"
+    }
 
 }
 #-------------------------------------#
@@ -126,7 +224,7 @@ def hello_cocktail():
 def learning(id=None):
     global learn_data
     datas = learn_data[id]
-    return render_template('learning.html',data=datas)
+    return render_template('learning.html', data=datas)
 
 
 @app.route("/quiz/<id>", methods=['GET', 'POST'])
