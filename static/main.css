@@ -23,6 +23,20 @@
   text-align: center;
 }
 
+#header-content {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: x-large;
+}
+
+#learn-next-button {
+  margin-bottom: 20px;
+}
+
+.transition-button-div {
+  text-align: center;
+}
+
 #quiz_header {
   text-align: center;
   font-weight: bolder;

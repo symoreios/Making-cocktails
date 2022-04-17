@@ -224,7 +224,12 @@ def hello_cocktail():
 def learning(id=None):
     global learn_data
     datas = learn_data[id]
-    return render_template('learning.html', data=datas)
+    return render_template('learn.html', data=datas)
+
+
+@app.route("/transition")
+def transition():
+    return render_template('transition.html')
 
 
 @app.route("/quiz/<id>", methods=['GET', 'POST'])

@@ -1,23 +1,23 @@
 {% extends "layout.html" %} {% block content %}
 <script
   type="text/javascript"
-  src="{{url_for('static', filename='home.js')}}"
+  src="{{url_for('static', filename='transition.js')}}"
 ></script>
 <div class="container">
   <div class="header row">
     <div class="col-12 header-content">
-      Learn Gin Rickey (...and some cocktail basics...) in 10 minutes!
+      Congratulations! You have learned the Gin Rickey recipe.
     </div>
   </div>
-  <div class="homepage-button-row row">
+  <div class="row">
     <div class="col-4"></div>
-    <div class="col-4 homepage-button-div">
+    <div class="col-4 transition-button-div">
       <button
         type="button"
         class="btn btn-outline-warning my-2 btn-lg"
-        id="home-page-btn"
+        id="transition-page-btn"
       >
-        Let's get started!
+        Go to quiz!
       </button>
     </div>
   </div>

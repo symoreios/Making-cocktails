@@ -1,0 +1,22 @@
+{% extends "layout.html" %} {% block content %}
+<script
+  type="text/javascript"
+  src="{{url_for('static', filename='learn.js')}}"
+></script>
+<script>
+  let learn_data = {{data|tojson}}
+</script>
+<div class="container">
+  <div class="row" id="learn-title-row">
+    <div class="col-12" id="header-content"></div>
+  </div>
+  <div class="row" id="learn-content-row">
+    <div class="col-6" id="learn-content"></div>
+    <div class="col-6" id="learn-media"></div>
+  </div>
+  <div class="row" id="learn-button-row">
+    <div class="col-4" id="learn-next-button"></div>
+  </div>
+</div>
+
+{% endblock %}
