@@ -24,6 +24,32 @@ function display_learn_data(data) {
     $("#learn-media").append(media)
 
     let now_id = data["id"]
+
+    let prev_id = parseInt(now_id) - 1
+    let prev_id_str = prev_id.toString()
+
+    let prev_link = $('<a />').attr({
+        href: "/" + "learn/" + prev_id_str
+    })
+
+    if (now_id==="1") {
+        $(prev_link).empty()
+        prev_link = $('<a />').attr({
+            href: "/"
+        })
+
+    }
+
+    let prev_button = $('<button />').attr({
+        'title': 'next button',
+        'class': 'btn btn-outline-warning my-2 my-sm-0 btn-lg',
+    })
+
+    $(prev_button).append("<div>Prev</div>")
+    $(prev_link).append(prev_button)
+    $("#learn-prev-button").append(prev_link)
+
+
     let next_id = parseInt(now_id) + 1
     let next_id_str = next_id.toString()
 
