@@ -1,4 +1,6 @@
 from http.client import responses
+from datetime import datetime
+from pytz import timezone
 from flask import Flask
 from flask import Flask
 from flask import render_template
@@ -15,7 +17,8 @@ learn_data = {
             "With no sugar or simple syrup, this cocktail is quite sour, dry and exceptionally refreshing.",
             "Use quality club soda. Fresh squeezed lime is also essential."
         ],
-        "next": "2"
+        "next": "2",
+        "enter-time":None
     },
     "2": {
         "id": "2",
@@ -25,7 +28,8 @@ learn_data = {
             "One of the easiest mixers",
             "Club soda dilutes the flavor of the spirit so you aren't drinking it straight, but still allows you to enjoy its unique flavors and aromas.",
         ],
-        "next": "3"
+        "next": "3",
+        "enter-time":None
     },
     "3": {
         "id": "3",
@@ -37,7 +41,8 @@ learn_data = {
             "You can make your own sour simply with equal parts of fresh lemon juice and simple syrup",
             "Classic cocktails that use lemons and limes include: whiskey sour, long island iced tea, cosmopolitan cocktail"
         ],
-        "next": "4"
+        "next": "4",
+        "enter-time":None
     },
     "4": {
         "id": "4",
@@ -48,7 +53,8 @@ learn_data = {
             "Herbal flavor marked with citrus and spices.",
             "Most gin is dry with a noticeable pine flavor due to its main ingredient, juniper berries."
         ],
-        "next": "5"
+        "next": "5",
+        "enter-time":None
     },
     "5": {
         "id": "5",
@@ -58,7 +64,8 @@ learn_data = {
             "Highball and Collins glasses are used for tall mixed drinks (“highballs”).",
             "Quite often, the highball drinks are built directly in the glass by pouring the ingredients over ice and stirring to mix."
         ],
-        "next": "6"
+        "next": "6",
+        "enter-time":None
     },
     "6": {
         "id": "6",
@@ -70,7 +77,8 @@ learn_data = {
             "4 ounces club soda, or to taste",
             "Lime wedges for garnish"
         ],
-        "next": "7"
+        "next": "7",
+        "enter-time":None
     },
     "7": {
         "id": "7",
@@ -79,7 +87,8 @@ learn_data = {
         "content": [
             "Fill a highball glass with ice.",
         ],
-        "next": "8"
+        "next": "8",
+        "enter-time":None
     },
     "8": {
         "id": "8",
@@ -88,7 +97,8 @@ learn_data = {
         "content": [
             "Pour the gin and lime juice over the ice.",
         ],
-        "next": "9"
+        "next": "9",
+        "enter-time":None
     },
     "9": {
         "id": "9",
@@ -97,7 +107,8 @@ learn_data = {
         "content": [
             "Top with club soda."
         ],
-        "next": "10"
+        "next": "10",
+        "enter-time":None
     },
     "10": {
         "id": "10",
@@ -106,7 +117,8 @@ learn_data = {
         "content": [
             "Garnish with a lime wedge. Serve and enjoy."
         ],
-        "next": "11"
+        "next": "11",
+        "enter-time":None
     },
     "11": {
         "id": "11",
@@ -122,7 +134,8 @@ learn_data = {
             "Top with club soda.",
             "Garnish with a lime wedge. Serve and enjoy.",
         ],
-        "next": "12"
+        "next": "12",
+        "enter-time":None
     }
 
 }
@@ -223,6 +236,12 @@ def hello_cocktail():
 @app.route("/learn/<id>")
 def learning(id=None):
     global learn_data
+    eastern = timezone('US/Eastern')
+    curr_time = eastern.localize(datetime.now())
+    fmt = '%Y-%m-%d %H:%M:%S %Z%z'
+    curr_time = curr_time.strftime(fmt)
+    if learn_data[id]["enter-time"] is None:
+        learn_data[id]["enter-time"] = curr_time
     datas = learn_data[id]
     return render_template('learn.html', data=datas)
 
