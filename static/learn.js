@@ -7,7 +7,9 @@ function display_learn_data(data) {
     $.each(data["content"], function(i, datum){
 
         let single_content = $("<li>" + datum + "</li>")
-
+        if(!datum){
+            single_content = $("<hr>")
+        }
         $("#learn-content").append(single_content)
 
     });

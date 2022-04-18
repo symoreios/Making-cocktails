@@ -108,6 +108,7 @@ learn_data = {
         "media": "https://www.thespruceeats.com/thmb/ApAmbMAVANn4zOMe5dL_KZMS-GY=/580x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/gin-rickey-recipe-760083-step-03-46ae6b35304140fd8ade9add990663db.jpg",
         "content": [
             "Pour the gin and lime juice over the ice.",
+            "Note: for a non-alcoholic drink, only pour the lime juice."
         ],
         "next": "10",
         "enter-time": None
@@ -141,6 +142,7 @@ learn_data = {
             "1/2 ounce lime juice, freshly squeezed",
             "4 ounces club soda, or to taste",
             "Lime wedges for garnish",
+            "",
             "Fill a highball glass with ice.",
             "Pour the gin and lime juice over the ice.",
             "Top with club soda.",
