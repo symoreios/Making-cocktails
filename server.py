@@ -174,11 +174,13 @@ quiz_questions = {
     "6": {
         "id": "6",
         "question": "Drag and drop placeholder",
+        "image": "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/tc-gin-index-1568659712.jpg?crop=1.00xw:1.00xh;0,0&resize=1200:*",
         "next_quiz": "7"
     },
     "7": {
         "id": "7",
         "question": "Shuffle the recipe steps to the right order (drag not enabled yet)",
+        "image": "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/tc-gin-index-1568659712.jpg?crop=1.00xw:1.00xh;0,0&resize=1200:*",
         "next_quiz": "8"
     }
 
