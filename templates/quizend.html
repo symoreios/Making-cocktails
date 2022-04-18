@@ -3,6 +3,9 @@
   type="text/javascript"
   src="{{url_for('static', filename='quizend.js')}}"
 ></script>
+<script>
+  let correct = {{correct|tojson}}
+</script>
 <div class="container">
   <div class="header row">
     <div class="col-12 header-content">

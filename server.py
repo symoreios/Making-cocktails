@@ -1,6 +1,6 @@
 from http.client import responses
 from datetime import datetime
-from pytz import timezone
+#from pytz import timezone
 from flask import Flask
 from flask import Flask
 from flask import render_template
@@ -271,13 +271,13 @@ def track_answers():
     json_data = request.get_json()
     correct_answers = json_data
     correct_answers += 1
-   # print(correct_answers)
     return jsonify(correct_answers)
 
 
 @app.route("/quizend")
 def quizend():
-    return render_template('quizend.html')
+    global correct_answers
+    return render_template('quizend.html', correct=correct_answers)
 
 
 if __name__ == '__main__':
