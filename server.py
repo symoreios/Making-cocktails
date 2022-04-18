@@ -18,7 +18,7 @@ learn_data = {
             "Use quality club soda. Fresh squeezed lime is also essential."
         ],
         "next": "2",
-        "enter-time":None
+        "enter-time": None
     },
     "2": {
         "id": "2",
@@ -29,7 +29,7 @@ learn_data = {
             "Club soda dilutes the flavor of the spirit so you aren't drinking it straight, but still allows you to enjoy its unique flavors and aromas.",
         ],
         "next": "3",
-        "enter-time":None
+        "enter-time": None
     },
     "3": {
         "id": "3",
@@ -42,7 +42,7 @@ learn_data = {
             "Classic cocktails that use lemons and limes include: whiskey sour, long island iced tea, cosmopolitan cocktail"
         ],
         "next": "4",
-        "enter-time":None
+        "enter-time": None
     },
     "4": {
         "id": "4",
@@ -54,7 +54,7 @@ learn_data = {
             "Most gin is dry with a noticeable pine flavor due to its main ingredient, juniper berries."
         ],
         "next": "5",
-        "enter-time":None
+        "enter-time": None
     },
     "5": {
         "id": "5",
@@ -65,7 +65,7 @@ learn_data = {
             "Quite often, the highball drinks are built directly in the glass by pouring the ingredients over ice and stirring to mix."
         ],
         "next": "6",
-        "enter-time":None
+        "enter-time": None
     },
     "6": {
         "id": "6",
@@ -78,7 +78,7 @@ learn_data = {
             "Lime wedges for garnish"
         ],
         "next": "7",
-        "enter-time":None
+        "enter-time": None
     },
     "7": {
         "id": "7",
@@ -88,7 +88,7 @@ learn_data = {
             "Fill a highball glass with ice.",
         ],
         "next": "8",
-        "enter-time":None
+        "enter-time": None
     },
     "8": {
         "id": "8",
@@ -98,7 +98,7 @@ learn_data = {
             "Pour the gin and lime juice over the ice.",
         ],
         "next": "9",
-        "enter-time":None
+        "enter-time": None
     },
     "9": {
         "id": "9",
@@ -108,7 +108,7 @@ learn_data = {
             "Top with club soda."
         ],
         "next": "10",
-        "enter-time":None
+        "enter-time": None
     },
     "10": {
         "id": "10",
@@ -118,7 +118,7 @@ learn_data = {
             "Garnish with a lime wedge. Serve and enjoy."
         ],
         "next": "11",
-        "enter-time":None
+        "enter-time": None
     },
     "11": {
         "id": "11",
@@ -135,7 +135,7 @@ learn_data = {
             "Garnish with a lime wedge. Serve and enjoy.",
         ],
         "next": "12",
-        "enter-time":None
+        "enter-time": None
     }
 
 }
@@ -179,7 +179,7 @@ quiz_questions = {
     "7": {
         "id": "7",
         "question": "Shuffle the recipe steps to the right order (drag not enabled yet)",
-
+        "next_quiz": "8"
     }
 
 }
@@ -271,6 +271,11 @@ def track_answers():
     correct_answers += 1
    # print(correct_answers)
     return jsonify(correct_answers)
+
+
+@app.route("/quizend")
+def quizend():
+    return render_template('quizend.html')
 
 
 if __name__ == '__main__':

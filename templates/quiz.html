@@ -64,10 +64,12 @@
       window.location.href = "/quiz/" + next_number;
     });
 
-    $(quiz_next_button).click(function (e) {
-      let next_number = question["next_quiz"];
-      window.location.href = "/quiz/" + next_number;
-    });
+    if (question["next_quiz"] === "8") {
+      $(quiz_next_button).click(function (e) {
+        window.location.href = "/quizend";
+      });
+    }
+
     function rightAnswer() {
       $("#quiz_header").append("<div class='feedback'> Correct! </div>");
       $(image_col).append(quiz_next_button);
@@ -100,7 +102,7 @@
       $(image_col).append(quiz_next_button);
 
       $(quiz_review_button).click(function (e) {
-        window.location.href = "/lesson/1";
+        window.location.href = "/learn/1";
       });
     }
   });
