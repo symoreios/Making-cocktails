@@ -3,14 +3,15 @@ function display_learn_data(data) {
 
     $("#header-content").append(data["title"])
 
-
+    $("#learn-content").append("<ul class=`bulletpoints`>")
     $.each(data["content"], function(i, datum){
 
-        let single_content = $("<div>" + datum + "</div>")
+        let single_content = $("<li>" + datum + "</li>")
 
         $("#learn-content").append(single_content)
 
     });
+    $("#learn-content").append("</ul>")
 
     // we would probably want to adjust this later since this only accounts for images and we might use video clips
     // an if conditional could be userful to deciding which media we are rendering
