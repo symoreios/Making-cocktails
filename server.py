@@ -266,6 +266,10 @@ def learning(id=None):
 def transition():
     return render_template('transition.html')
 
+@app.route("/review")
+def review():
+    return render_template('review.html')
+
 
 @app.route("/quiz/<id>", methods=['GET', 'POST'])
 def quiz(id=None):
