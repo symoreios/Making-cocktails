@@ -46,6 +46,18 @@ learn_data = {
     },
     "4": {
         "id": "4",
+        "title": "Alcohol Disclaimer",
+        "media": "https://upload.wikimedia.org/wikipedia/commons/8/83/United_States_Centers_for_Disease_Control_and_Prevention_logo.svg",
+        "content": [
+            "Excessive alcohol use has immediate effects that increase the risk of many harmful health conditions.",
+            "A standard drink of gin contains around 1.5 ounces of gin",
+            "For more info : https://www.cdc.gov/alcohol/fact-sheets/alcohol-use.htm " 
+        ],
+        "next": "5",
+        "enter-time": None
+    },
+    "5": {
+        "id": "5",
         "title": "Key Ingredient: Gin",
         "media": "https://i.pinimg.com/originals/8e/c8/a1/8ec8a19b86d10e65b356c89e30af7fa6.png",
         "content": [
@@ -53,22 +65,22 @@ learn_data = {
             "Herbal flavor marked with citrus and spices.",
             "Most gin is dry with a noticeable pine flavor due to its main ingredient, juniper berries."
         ],
-        "next": "5",
+        "next": "6",
         "enter-time": None
     },
-    "5": {
-        "id": "5",
+    "6": {
+        "id": "6",
         "title": "Definition: Highball",
         "media": "https://www.thespruceeats.com/thmb/JIUbjPCnQzDzmkP7FlZu2_rjr5U=/566x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/highball-glasses-56a170215f9b58b7d0bf49d6.jpg",
         "content": [
             "Highball and Collins glasses are used for tall mixed drinks (“highballs”).",
             "Quite often, the highball drinks are built directly in the glass by pouring the ingredients over ice and stirring to mix."
         ],
-        "next": "6",
+        "next": "7",
         "enter-time": None
     },
-    "6": {
-        "id": "6",
+    "7": {
+        "id": "7",
         "title": "Gin Rickey Ingredients",
         "media": "https://www.thespruceeats.com/thmb/KWN7q_rc54d5LvlRkOPCcndEQ6Q=/580x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/gin-rickey-recipe-760083-step-01-d519ccd29d134b07a6bf3517fe14cf01.jpg",
         "content": [
@@ -77,51 +89,51 @@ learn_data = {
             "4 ounces club soda, or to taste",
             "Lime wedges for garnish"
         ],
-        "next": "7",
-        "enter-time": None
-    },
-    "7": {
-        "id": "7",
-        "title": "Gin Rickey Recipe: Step 1 of 4",
-        "media": "https://www.thespruceeats.com/thmb/zRbsCD6uzcbdUdlq1EAi3DfUsgQ=/580x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/gin-rickey-recipe-760083-step-02-0272d50d178040758c824161a89da920.jpg",
-        "content": [
-            "Fill a highball glass with ice.",
-        ],
         "next": "8",
         "enter-time": None
     },
     "8": {
         "id": "8",
-        "title": "Gin Rickey Recipe: Step 2 of 4",
-        "media": "https://www.thespruceeats.com/thmb/ApAmbMAVANn4zOMe5dL_KZMS-GY=/580x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/gin-rickey-recipe-760083-step-03-46ae6b35304140fd8ade9add990663db.jpg",
+        "title": "Gin Rickey Recipe: Step 1 of 4",
+        "media": "https://www.thespruceeats.com/thmb/zRbsCD6uzcbdUdlq1EAi3DfUsgQ=/580x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/gin-rickey-recipe-760083-step-02-0272d50d178040758c824161a89da920.jpg",
         "content": [
-            "Pour the gin and lime juice over the ice.",
+            "Fill a highball glass with ice.",
         ],
         "next": "9",
         "enter-time": None
     },
     "9": {
         "id": "9",
-        "title": "Gin Rickey Recipe: Step 3 of 4",
-        "media": "https://www.thespruceeats.com/thmb/cRQRD5boRDWB2B0r-b8-m6eTU44=/580x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/gin-rickey-recipe-760083-step-04-ebe69350e4ae4ed7b812ece6512f7ba6.jpg",
+        "title": "Gin Rickey Recipe: Step 2 of 4",
+        "media": "https://www.thespruceeats.com/thmb/ApAmbMAVANn4zOMe5dL_KZMS-GY=/580x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/gin-rickey-recipe-760083-step-03-46ae6b35304140fd8ade9add990663db.jpg",
         "content": [
-            "Top with club soda."
+            "Pour the gin and lime juice over the ice.",
         ],
         "next": "10",
         "enter-time": None
     },
     "10": {
         "id": "10",
-        "title": "Gin Rickey Recipe: 4 of 4",
-        "media": "https://www.thespruceeats.com/thmb/Gh79cWU0DFjfrcLJycKvjpnISuU=/580x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/gin-rickey-recipe-760083-step-06-c80b4fd308884159b7a9c715ed3158e5.jpg",
+        "title": "Gin Rickey Recipe: Step 3 of 4",
+        "media": "https://www.thespruceeats.com/thmb/cRQRD5boRDWB2B0r-b8-m6eTU44=/580x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/gin-rickey-recipe-760083-step-04-ebe69350e4ae4ed7b812ece6512f7ba6.jpg",
         "content": [
-            "Garnish with a lime wedge. Serve and enjoy."
+            "Top with club soda."
         ],
         "next": "11",
         "enter-time": None
     },
     "11": {
         "id": "11",
+        "title": "Gin Rickey Recipe: 4 of 4",
+        "media": "https://www.thespruceeats.com/thmb/Gh79cWU0DFjfrcLJycKvjpnISuU=/580x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/gin-rickey-recipe-760083-step-06-c80b4fd308884159b7a9c715ed3158e5.jpg",
+        "content": [
+            "Garnish with a lime wedge. Serve and enjoy."
+        ],
+        "next": "12",
+        "enter-time": None
+    },
+    "12": {
+        "id": "12",
         "title": "Gin Rickey Recipe Review",
         "media": "https://www.thespruceeats.com/thmb/JIUbjPCnQzDzmkP7FlZu2_rjr5U=/566x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/highball-glasses-56a170215f9b58b7d0bf49d6.jpg",
         "content": [
@@ -134,7 +146,7 @@ learn_data = {
             "Top with club soda.",
             "Garnish with a lime wedge. Serve and enjoy.",
         ],
-        "next": "12",
+        "next": "13",
         "enter-time": None
     }
 

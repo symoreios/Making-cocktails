@@ -57,7 +57,7 @@ function display_learn_data(data) {
         href: "/" + "learn/" + next_id_str
     })
 
-    if (now_id==="11") {
+    if (now_id==="12") {
         $(next_link).empty()
         next_link = $('<a />').attr({
             href: "/" + "transition"
