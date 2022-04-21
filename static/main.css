@@ -53,7 +53,7 @@ img {
 }
 .next_button {
   color: black;
-  background-color: red;
+  background-color: yellow;
   width: 50px;
   padding-top: 5px;
 }
@@ -64,4 +64,11 @@ img {
 
 .review {
   background-color: yellow;
+}
+
+#quiz_quest {
+  text-align: left;
+  font-weight: bolder;
+  font-size: larger;
+  padding-bottom: 20px;
 }

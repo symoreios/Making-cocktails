@@ -1,4 +1,52 @@
 function load_quiz(){
+  if(question["id"] == "6"){
+    let quiz_head = $(
+      "<div class='row'>  <div class='col-12'>" +
+        "Gin Rickey Quiz (" +
+        question["id"] +
+        "/7) " + "" +
+        "</div> "
+    );
+    $("#quiz_header").append(quiz_head);
+    let quiz_question = $(
+      "<div class='row'>  <div class='col-12'>" +
+        "Assemble a gin rickey!" +
+        "</div> </div>"
+    );
+    $("#quiz_quest").append(quiz_question);
+    let row_for_all = $("<div class='row'>")
+
+    let row_for_pictures = $("<div class='row'>")
+    let row_for_drop = $("<div class='row col-12'>")
+    $(row_for_drop).append("drop here")
+    $.each(responses["image_list"], function (i, answer) {
+      let class_for_pic = $("<div class='drag_able col-2'> <img src='" + answer + "'> </div> ")
+      $(row_for_pictures).append(class_for_pic)
+    });
+    $(row_for_all).append(row_for_pictures)
+  //  $(".drag_me").append(row_for_pictures)
+    $("#drag_here").append(row_for_drop)
+   // $("#overall_row").append("#drag_here")
+    $("#overall_row").append(row_for_all)
+    $(".drag_able").draggable({
+        
+    });
+    $("#drag_here").droppable({
+      accept: ".drag_able",
+      classes:{
+        "ui-droppable-active": "boxMouseOver",
+            "ui-droppable-hover": "highlight"      
+      },
+      drop: function(event, ui){
+        console.log(ui)
+        console.log(event)
+        let name = ui.draggable.text()
+        console.log(name)
+       // alert(name)
+      }
+    })
+
+  } else{
     let row_for_everything = $("<div class='row'>");
     let question_col = $("<div class='col-5'>");
     let image_col = $("<div class='col-7'>");
@@ -9,10 +57,7 @@ function load_quiz(){
         "Gin Rickey Quiz (" +
         question["id"] +
         "/7) " + "" +
-        "</div> <div class=col-2> Current Score: " +
-        correct +
-        "/15" +
-        "</div> </div>"
+        "</div> "
     );
     $("#quiz_header").append(quiz_head);
     let quiz_pic = $(
@@ -63,7 +108,6 @@ function load_quiz(){
     }
 
     function rightAnswer() {
-        //reloading the page should work here but it won't add the buttons
         $("#quiz_header").append("<div class='feedback'> Correct! </div>");
         $(question_col).append(quiz_next_button);
       $.ajax({
@@ -76,7 +120,6 @@ function load_quiz(){
 
         success: function (correct_answer) {
           let correct = correct_answer;
-        // window.location.href = "/quiz/" + question["id"];
         },
         error: function (request, status, error) {
           console.log("Error");
@@ -88,7 +131,6 @@ function load_quiz(){
       
     }
     function wrongAnswer() {
-      //  window.location.href = "/quiz/" + question["id"];
       $("#quiz_header").append("<div class='feedback'> Incorrect! </div>");
       let quiz_review_button =
         "<div class='review_button'> <button class='review' input type='button'> Review </button>";
@@ -100,6 +142,8 @@ function load_quiz(){
       });
       
     }
+  }
+    
 }
 $(document).ready(function(){
     
