@@ -51,7 +51,7 @@ learn_data = {
         "content": [
             "Excessive alcohol use has immediate effects that increase the risk of many harmful health conditions.",
             "A standard drink of gin contains around 1.5 ounces of gin",
-            "For more info : https://www.cdc.gov/alcohol/fact-sheets/alcohol-use.htm " 
+            "For more info : https://www.cdc.gov/alcohol/fact-sheets/alcohol-use.htm "
         ],
         "next": "5",
         "enter-time": None
@@ -266,6 +266,7 @@ def learning(id=None):
 @app.route("/transition")
 def transition():
     return render_template('transition.html')
+
 
 @app.route("/review")
 def review():
