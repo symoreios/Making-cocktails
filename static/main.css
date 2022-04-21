@@ -72,3 +72,6 @@ img {
   font-size: larger;
   padding-bottom: 20px;
 }
+ul.bulletpoints {
+  list-style-type: square;
+}
