@@ -43,8 +43,16 @@ function display_learn_data(data) {
 
     }
 
+    if (now_id==="2") {
+        $(prev_link).empty()
+        prev_link = $('<a />').attr({
+            href: "/ingredientsoverview"
+        })
+
+    }
+
     let prev_button = $('<button />').attr({
-        'title': 'next button',
+        'title': 'prev button',
         'class': 'btn btn-outline-warning my-2 my-sm-0 btn-lg',
     })
 
@@ -59,6 +67,14 @@ function display_learn_data(data) {
     let next_link = $('<a />').attr({
         href: "/" + "learn/" + next_id_str
     })
+
+    if (now_id==="1") {
+        $(next_link).empty()
+        next_link = $('<a />').attr({
+            href: "/ingredientsoverview"
+        })
+
+    }
 
     if (now_id==="12") {
         $(next_link).empty()

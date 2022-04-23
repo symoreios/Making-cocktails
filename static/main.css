@@ -41,7 +41,21 @@
   font-size: x-large;
 }
 
+.overview-sing-row {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.overview-content-row {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
 #learn-button-row {
+  margin-bottom: 30px;
+}
+
+.overview-button-row {
   margin-bottom: 30px;
 }
 
