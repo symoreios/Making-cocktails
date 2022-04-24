@@ -1,6 +1,6 @@
 function load_quiz(){
   let quiz_next_button = $(
-    "<div class='next'> <button class='btn btn-outline-warning my-2 my-sm-0 btn-lg' input type='button'>Next</button>"
+    "<div class='next'> <button class='next_button' input type='button'> Next </button>"
   );
 
   $(quiz_next_button).click(function (e) {
@@ -85,16 +85,16 @@ function load_quiz(){
     $("#quiz_quest").append(quiz_question);
     $.each(responses["response_list"], function (i, answer) {
       let clickable_response = $(
-        "<div class='col-8 shuffle_class'> " +
+        "<div class='shuffle_class'> <div class='col-8'> <p>" +
           answer +
-          " </div> </div> "
+          " </p>  </div> </div> "
       );
-
+      $(".shuffle_class").draggable({
+        revert: "valid"
+    });
       $(question_col).append(clickable_response);
     })
-    $(".shuffle_class").draggable({
-
-    });
+    
     $("#overall_row").append(row_for_everything);
   }
 
@@ -125,7 +125,7 @@ function load_quiz(){
     $("#quiz_quest").append(quiz_question);
     $.each(responses["response_list"], function (i, answer) {
       let clickable_response = $(
-        "<div class='response_container'> <button class='btn btn-outline-warning my-2 my-sm-0 btn-lg' input type='button'>" +
+        "<div class='response_container'> <div class='row'> <div class='col-6'>  <button class='response_button' input type='button'>" +
           answer +
           "</button> </div> </div>"
       );
@@ -185,11 +185,8 @@ function load_quiz(){
     }
     function wrongAnswer() {
       $("#quiz_header").append("<div class='feedback'> Incorrect! </div>");
-      let quiz_review_button = $('<button />').attr({
-        'title': 'quiz review button',
-        'class': 'btn btn-outline-warning my-2 my-sm-0',
-      })
-      $(quiz_review_button).append("Review")
+      let quiz_review_button =
+        "<div class='review_button'> <button class='review' input type='button'> Review </button>";
       $("#quiz_header").append(quiz_review_button);
       $(question_col).append(quiz_next_button);
 
