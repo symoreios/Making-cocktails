@@ -43,7 +43,7 @@ function display_learn_data(data) {
 
     }
 
-    if (now_id==="2") {
+    if (now_id==="3") {
         $(prev_link).empty()
         prev_link = $('<a />').attr({
             href: "/ingredientsoverview"
@@ -68,7 +68,7 @@ function display_learn_data(data) {
         href: "/" + "learn/" + next_id_str
     })
 
-    if (now_id==="1") {
+    if (now_id==="2") {
         $(next_link).empty()
         next_link = $('<a />').attr({
             href: "/ingredientsoverview"

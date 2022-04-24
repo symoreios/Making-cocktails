@@ -47,8 +47,8 @@
 }
 
 .overview-content-row {
-  margin-top: 5px;
-  margin-bottom: 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 #learn-button-row {
@@ -57,6 +57,11 @@
 
 .overview-button-row {
   margin-bottom: 30px;
+}
+
+.overview-media-1 {
+  max-height: 100px;
+  width: auto;
 }
 
 .learn-media-1 {
