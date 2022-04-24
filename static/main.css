@@ -10,13 +10,25 @@
 .welcome-img-div {
   text-align: center;
   margin-top: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+.header-img-1 {
+  height: 500px;
+  width: auto;
 }
 
 .header-content {
-  margin-top: 20px;
-  margin-bottom: 20px;
-  font-size: x-large;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: xx-large;
+  font-weight: bold;
+}
+
+.header-subcontent {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: medium;
 }
 
 .homepage-button-div {
@@ -29,8 +41,32 @@
   font-size: x-large;
 }
 
+.overview-sing-row {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.overview-content-row {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
 #learn-button-row {
   margin-bottom: 30px;
+}
+
+.overview-button-row {
+  margin-bottom: 30px;
+}
+
+.overview-media-1 {
+  max-height: 100px;
+  width: auto;
+}
+
+.learn-media-1 {
+  max-height: 500px;
+  width: auto;
 }
 
 .transition-button-div {

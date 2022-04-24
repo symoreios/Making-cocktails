@@ -22,17 +22,29 @@ learn_data = {
     },
     "2": {
         "id": "2",
-        "title": "Key Ingredient: Club Soda",
-        "media": "https://cdn.pixabay.com/photo/2015/08/25/16/12/lime-907124_960_720.jpg",
+        "title": "Alcohol Disclaimer",
+        "media": "https://upload.wikimedia.org/wikipedia/commons/8/83/United_States_Centers_for_Disease_Control_and_Prevention_logo.svg",
         "content": [
-            "One of the easiest mixers",
-            "Club soda dilutes the flavor of the spirit so you aren't drinking it straight, but still allows you to enjoy its unique flavors and aromas.",
+            "Excessive alcohol use has immediate effects that increase the risk of many harmful health conditions.",
+            "A standard drink of gin contains around 1.5 ounces of gin",
+            "For more info : https://www.cdc.gov/alcohol/fact-sheets/alcohol-use.htm "
         ],
         "next": "3",
         "enter-time": None
     },
     "3": {
         "id": "3",
+        "title": "Key Ingredient: Club Soda",
+        "media": "https://static.specsonline.com/wp-content/uploads/2020/10/001660051470.jpg",
+        "content": [
+            "One of the easiest mixers",
+            "Club soda dilutes the flavor of the spirit so you aren't drinking it straight, but still allows you to enjoy its unique flavors and aromas.",
+        ],
+        "next": "4",
+        "enter-time": None
+    },
+    "4": {
+        "id": "4",
         "title": "Key Ingredient: Lemons and Limes",
         "media": "https://suppliesforcandles.co.uk/4098/lemon-lime-fragrance-oil.jpg",
         "content": [
@@ -41,21 +53,10 @@ learn_data = {
             "You can make your own sour simply with equal parts of fresh lemon juice and simple syrup",
             "Classic cocktails that use lemons and limes include: whiskey sour, long island iced tea, cosmopolitan cocktail"
         ],
-        "next": "4",
-        "enter-time": None
-    },
-    "4": {
-        "id": "4",
-        "title": "Alcohol Disclaimer",
-        "media": "https://upload.wikimedia.org/wikipedia/commons/8/83/United_States_Centers_for_Disease_Control_and_Prevention_logo.svg",
-        "content": [
-            "Excessive alcohol use has immediate effects that increase the risk of many harmful health conditions.",
-            "A standard drink of gin contains around 1.5 ounces of gin",
-            "For more info : https://www.cdc.gov/alcohol/fact-sheets/alcohol-use.htm "
-        ],
         "next": "5",
         "enter-time": None
     },
+
     "5": {
         "id": "5",
         "title": "Key Ingredient: Gin",
@@ -298,6 +299,12 @@ def track_answers():
 def quizend():
     global correct_answers
     return render_template('quizend.html', correct=correct_answers)
+
+
+@app.route("/ingredientsoverview")
+def ingredientsoverview():
+    global learn_data
+    return render_template('keyingredients.html', data=learn_data)
 
 
 if __name__ == '__main__':
