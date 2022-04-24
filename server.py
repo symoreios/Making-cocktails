@@ -18,6 +18,7 @@ learn_data = {
             "Use quality club soda. Fresh squeezed lime is also essential."
         ],
         "next": "2",
+        "progress": "8%",
         "enter-time": None
     },
     "2": {
@@ -30,6 +31,7 @@ learn_data = {
             "For more info : https://www.cdc.gov/alcohol/fact-sheets/alcohol-use.htm "
         ],
         "next": "3",
+        "progress": "16%",
         "enter-time": None
     },
     "3": {
@@ -41,6 +43,7 @@ learn_data = {
             "Club soda dilutes the flavor of the spirit so you aren't drinking it straight, but still allows you to enjoy its unique flavors and aromas.",
         ],
         "next": "4",
+        "progress": "24%",
         "enter-time": None
     },
     "4": {
@@ -54,6 +57,7 @@ learn_data = {
             "Classic cocktails that use lemons and limes include: whiskey sour, long island iced tea, cosmopolitan cocktail"
         ],
         "next": "5",
+        "progress": "32%",
         "enter-time": None
     },
 
@@ -67,6 +71,7 @@ learn_data = {
             "Most gin is dry with a noticeable pine flavor due to its main ingredient, juniper berries."
         ],
         "next": "6",
+        "progress": "40%",
         "enter-time": None
     },
     "6": {
@@ -78,6 +83,7 @@ learn_data = {
             "Quite often, the highball drinks are built directly in the glass by pouring the ingredients over ice and stirring to mix."
         ],
         "next": "7",
+        "progress": "48%",
         "enter-time": None
     },
     "7": {
@@ -91,6 +97,7 @@ learn_data = {
             "Lime wedges for garnish"
         ],
         "next": "8",
+        "progress": "56%",
         "enter-time": None
     },
     "8": {
@@ -101,6 +108,7 @@ learn_data = {
             "Fill a highball glass with ice.",
         ],
         "next": "9",
+        "progress": "64%",
         "enter-time": None
     },
     "9": {
@@ -112,6 +120,7 @@ learn_data = {
             "Note: for a non-alcoholic drink, only pour the lime juice."
         ],
         "next": "10",
+        "progress": "72%",
         "enter-time": None
     },
     "10": {
@@ -122,6 +131,7 @@ learn_data = {
             "Top with club soda."
         ],
         "next": "11",
+        "progress": "80%",
         "enter-time": None
     },
     "11": {
@@ -132,6 +142,7 @@ learn_data = {
             "Garnish with a lime wedge. Serve and enjoy."
         ],
         "next": "12",
+        "progress": "90%",
         "enter-time": None
     },
     "12": {
@@ -150,6 +161,7 @@ learn_data = {
             "Garnish with a lime wedge. Serve and enjoy.",
         ],
         "next": "13",
+        "progress": "100%",
         "enter-time": None
     }
 

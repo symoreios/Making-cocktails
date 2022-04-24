@@ -3,6 +3,23 @@ function display_learn_data(data) {
 
     $("#header-content").append(data["title"])
 
+    let progress_number = data["progress"].replace('%', '')
+    console.log(progress_number)
+
+    let progress_bar = $('<div>').attr({
+        "class": "progress-bar bg-warning progress-bar-striped progress-bar-animated",
+        "role": "progressbar",
+        "style": "width: " + data["progress"],
+        "aria-valuenow": progress_number,
+        "aria-valuemin": "0",
+        "aria-valuemax": "100"
+    })
+
+    $(progress_bar).append(data["progress"])
+
+    $(".progress").append(progress_bar)
+
+
     $("#learn-content").append("<ul class=`bulletpoints`>")
     $.each(data["content"], function(i, datum){
 

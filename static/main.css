@@ -60,6 +60,15 @@
   margin-bottom: 30px;
 }
 
+#learn-progress-bar {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.progress-bar-text {
+  font-size: small;
+}
+
 .overview-button-row {
   margin-bottom: 30px;
 }
