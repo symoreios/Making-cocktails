@@ -193,7 +193,7 @@ quiz_questions = {
     },
     "7": {
         "id": "7",
-        "question": "Shuffle the recipe steps to the right order (drag not enabled yet)",
+        "question": "Shuffle the recipe steps to the right order",
         "image": "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/tc-gin-index-1568659712.jpg?crop=1.00xw:1.00xh;0,0&resize=1200:*",
         "next_quiz": "8"
     }
@@ -232,12 +232,12 @@ quiz_responses = {
     "6": {
         "id": "6",
         "response_list": ["placeholder so the page loads"],
-        "image_list": ["https://www.thespruceeats.com/thmb/D1LPSjj9dhYrH4JIDKVmEYOdutE=/1500x844/smart/filters:no_upscale()/bar-glassware-tour-759984_V3-256688a32766449890dbddfb50bab7e6.png", "https://www.thespruceeats.com/thmb/JIUbjPCnQzDzmkP7FlZu2_rjr5U=/566x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/highball-glasses-56a170215f9b58b7d0bf49d6.jpg"],
-        "answer": ["https://www.thespruceeats.com/thmb/D1LPSjj9dhYrH4JIDKVmEYOdutE=/1500x844/smart/filters:no_upscale()/bar-glassware-tour-759984_V3-256688a32766449890dbddfb50bab7e6.png"]
+        "image_list": ["https://www.thespruceeats.com/thmb/D1LPSjj9dhYrH4JIDKVmEYOdutE=/1500x844/smart/filters:no_upscale()/bar-glassware-tour-759984_V3-256688a32766449890dbddfb50bab7e6.png", "https://www.thespruceeats.com/thmb/JIUbjPCnQzDzmkP7FlZu2_rjr5U=/566x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/highball-glasses-56a170215f9b58b7d0bf49d6.jpg", "https://static.specsonline.com/wp-content/uploads/2020/10/001660051470.jpg", "https://static.specsonline.com/wp-content/uploads/2020/10/001660050570.jpg", "https://dydza6t6xitx6.cloudfront.net/ci-bombay-sapphire-4967085f606d9efa.jpeg", "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Lime_-_whole_and_halved.jpg/1200px-Lime_-_whole_and_halved.jpg", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTn2lNjDqo6EuAA3peELcA4IXLKSfhZmfPIfw&usqp=CAU", "https://www.totalwine.com/dynamic/x490,sq/media/sys_master/twmmedia/h31/h65/12913226874910.png"],
+        "answer": ["https://www.thespruceeats.com/thmb/D1LPSjj9dhYrH4JIDKVmEYOdutE=/1500x844/smart/filters:no_upscale()/bar-glassware-tour-759984_V3-256688a32766449890dbddfb50bab7e6.png",  "https://static.specsonline.com/wp-content/uploads/2020/10/001660051470.jpg", "https://dydza6t6xitx6.cloudfront.net/ci-bombay-sapphire-4967085f606d9efa.jpeg", "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Lime_-_whole_and_halved.jpg/1200px-Lime_-_whole_and_halved.jpg", ]
     },
     "7": {
         "id": "7",
-        "response_list": ["placeholder so the page loads"],
+        "response_list": ["Top with club soda", "Pour the gin and lime juice over the ice", "Fill a highball with ice", "Garnish with a lime wedge"],
         "answer": "placeholder so the page loads"
     }
 

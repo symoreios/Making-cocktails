@@ -1,5 +1,14 @@
 function load_quiz(){
+  let quiz_next_button = $(
+    "<div class='next'> <button class='next_button' input type='button'> Next </button>"
+  );
+
+  $(quiz_next_button).click(function (e) {
+    let next_number = question["next_quiz"];
+    window.location.href = "/quiz/" + next_number;
+  });
   if(question["id"] == "6"){
+    let count = 0
     let quiz_head = $(
       "<div class='row'>  <div class='col-12'>" +
         "Gin Rickey Quiz (" +
@@ -10,26 +19,23 @@ function load_quiz(){
     $("#quiz_header").append(quiz_head);
     let quiz_question = $(
       "<div class='row'>  <div class='col-12'>" +
-        "Assemble a gin rickey!" +
+        "Assemble a gin rickey by dragging the correct ingredients to the cup below!" +
         "</div> </div>"
     );
     $("#quiz_quest").append(quiz_question);
     let row_for_all = $("<div class='row'>")
 
     let row_for_pictures = $("<div class='row'>")
-    let row_for_drop = $("<div class='row col-12'>")
-    $(row_for_drop).append("drop here")
+    let row_for_drop = $("<div class='row'> <div class= 'col-12'>" + "Drag ingredients here! </div> </div>")
     $.each(responses["image_list"], function (i, answer) {
-      let class_for_pic = $("<div class='drag_able col-2'> <img src='" + answer + "'> </div> ")
+      let class_for_pic = $("<div class='drag_able col-2'> <p> <img src='" + answer + "'> </p> </div> ")
       $(row_for_pictures).append(class_for_pic)
     });
     $(row_for_all).append(row_for_pictures)
-  //  $(".drag_me").append(row_for_pictures)
     $("#drag_here").append(row_for_drop)
-   // $("#overall_row").append("#drag_here")
     $("#overall_row").append(row_for_all)
     $(".drag_able").draggable({
-        
+        revert: "valid"
     });
     $("#drag_here").droppable({
       accept: ".drag_able",
@@ -38,15 +44,21 @@ function load_quiz(){
             "ui-droppable-hover": "highlight"      
       },
       drop: function(event, ui){
-        console.log(ui)
-        console.log(event)
-        let name = ui.draggable.text()
-        console.log(name)
-       // alert(name)
+        let name = ui.draggable.find("img").attr("src");
+        if(jQuery.inArray(name, responses["answer"]) !== -1){
+          $(".feedback").remove()
+          $(".drop_counter").remove()
+          count +=1
+          $("#drag_here").prepend("<div class='drop_counter'>"  + count + "/6")
+          $(row_for_drop).append("<div class = 'col-3'> <img src='" + name + "'> </div>")
+          $(ui.draggable).remove()
+          $("#quiz_header").append("<div class='feedback'> Correct! </div>");
+          $("#drag_here").append(quiz_next_button)
+        }
       }
     })
-
-  } else{
+  }
+    else if (question["id"]==7){
     let row_for_everything = $("<div class='row'>");
     let question_col = $("<div class='col-5'>");
     let image_col = $("<div class='col-7'>");
@@ -60,6 +72,47 @@ function load_quiz(){
         "</div> "
     );
     $("#quiz_header").append(quiz_head);
+    
+    let quiz_pic = $(
+      "<div class='col-10'>  <img src='" + question["image"] + "'> </div>  "
+    );
+    $(image_col).append(quiz_pic);
+    let quiz_question = $(
+      "<div class='row'>  <div class='col-12'>" +
+        question["question"] +
+        "</div> </div>"
+    );
+    $("#quiz_quest").append(quiz_question);
+    $.each(responses["response_list"], function (i, answer) {
+      let clickable_response = $(
+        "<div class='col-8 shuffle_class'> " +
+          answer +
+          " </div> </div> "
+      );
+
+      $(question_col).append(clickable_response);
+    })
+    $(".shuffle_class").draggable({
+
+    });
+    $("#overall_row").append(row_for_everything);
+  }
+
+   else{
+    let row_for_everything = $("<div class='row'>");
+    let question_col = $("<div class='col-5'>");
+    let image_col = $("<div class='col-7'>");
+    $(row_for_everything).append(question_col);
+    $(row_for_everything).append(image_col);
+    let quiz_head = $(
+      "<div class='row'>  <div class='col-10'>" +
+        "Gin Rickey Quiz (" +
+        question["id"] +
+        "/7) " + "" +
+        "</div> "
+    );
+    $("#quiz_header").append(quiz_head);
+    
     let quiz_pic = $(
       "<div class='col-10'>  <img src='" + question["image"] + "'> </div>  "
     );
@@ -92,14 +145,14 @@ function load_quiz(){
     });
     $("#overall_row").append(row_for_everything);
 
-    let quiz_next_button = $(
-      "<div class='next'> <button class='next_button' input type='button'> Next </button>"
-    );
+    // let quiz_next_button = $(
+    //   "<div class='next'> <button class='next_button' input type='button'> Next </button>"
+    // );
 
-    $(quiz_next_button).click(function (e) {
-      let next_number = question["next_quiz"];
-      window.location.href = "/quiz/" + next_number;
-    });
+    // $(quiz_next_button).click(function (e) {
+    //   let next_number = question["next_quiz"];
+    //   window.location.href = "/quiz/" + next_number;
+    // });
 
     if (question["next_quiz"] === "8") {
       $(quiz_next_button).click(function (e) {
