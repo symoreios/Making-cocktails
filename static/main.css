@@ -171,6 +171,7 @@ li {
   text-align: center;
   background-color: rgb(231, 243, 59);
   border-radius: 50%;
+  margin-left: 305px;
 }
 svg.transp {
   height: 60vh;
