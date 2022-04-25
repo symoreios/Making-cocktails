@@ -172,3 +172,12 @@ li {
   background-color: rgb(231, 243, 59);
   border-radius: 50%;
 }
+svg.transp {
+  height:60vh;
+  margin-right: auto;
+  margin-left: auto;
+  display: block;
+  stroke-width:1;
+	fill-opacity:50%;
+  fill:yellow;
+}
