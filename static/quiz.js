@@ -70,7 +70,7 @@ function load_quiz(){
     $("#overall_row").append(row_for_all)
     $(".drag_able").draggable({
         cursor: "move",
-        revert: "invalid",
+        revert: "valid", //this should be invalid though
         stack:".drag_able,#drag_here"
     });
     $("#drag_here").droppable({
