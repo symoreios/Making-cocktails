@@ -123,6 +123,8 @@ img {
 }
 ul.bulletpoints {
   list-style-type: square;
+  margin: 1em;
+  padding: 1em;
 }
 .review-tag{
   width:450px;

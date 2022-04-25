@@ -14,8 +14,8 @@ learn_data = {
         "media": "https://zestfulkitchen.com/wp-content/uploads/2020/08/gin-rickey_for-web-4.jpg",
         "content": [
             "The gin rickey is for people who like <b>tart, bracing</b> cocktails.",
-            "With <i>no</i> sugar or simple syrup, this cocktail is quite <b>sour, dry</b> and exceptionally <b>refreshing</br>.",
-            "Use quality club soda. Fresh squeezed lime is also essential."
+            "With <i>no</i> sugar or simple syrup, this cocktail is quite <b>sour, dry</b> and exceptionally <b>refreshing</b>.",
+            "Use quality club soda. <b>Fresh</b> squeezed lime is also essential."
         ],
         "next": "2",
         "progress": "8%",
@@ -26,8 +26,8 @@ learn_data = {
         "title": "Alcohol Disclaimer",
         "media": "https://upload.wikimedia.org/wikipedia/commons/8/83/United_States_Centers_for_Disease_Control_and_Prevention_logo.svg",
         "content": [
-            "Excessive alcohol use has immediate effects that increase the risk of many harmful health conditions.",
-            "A standard drink of gin contains around 1.5 ounces of gin",
+            "<b>Excessive</b> alcohol use has immediate effects that increase the risk of many harmful health conditions.",
+            "A standard drink of gin contains around <b>1.5 ounces</b> of gin",
             "For more info : https://www.cdc.gov/alcohol/fact-sheets/alcohol-use.htm "
         ],
         "next": "3",
@@ -40,7 +40,7 @@ learn_data = {
         "media": "https://static.specsonline.com/wp-content/uploads/2020/10/001660051470.jpg",
         "content": [
             "One of the easiest mixers",
-            "Club soda dilutes the flavor of the spirit so you aren't drinking it straight, but still allows you to enjoy its unique flavors and aromas.",
+            "Club soda dilutes the flavor of the spirit so you aren't drinking it straight, but <b>still allows you to enjoy its unique flavors and aromas</b>.",
         ],
         "next": "4",
         "progress": "24%",
@@ -51,9 +51,9 @@ learn_data = {
         "title": "Key Ingredient: Lemons and Limes",
         "media": "https://suppliesforcandles.co.uk/4098/lemon-lime-fragrance-oil.jpg",
         "content": [
-            "Fresh lemon and lime juice brings a tangy zing to many classic drinks",
-            "Lemon juice works in all seasons",
-            "You can make your own sour simply with equal parts of fresh lemon juice and simple syrup",
+            "Fresh lemon and lime juice brings a <b>tangy zing</b> to many classic drinks",
+            "Lemon juice works in <b>all seasons</b>",
+            "You can make your own sour simply with <b>equal parts</b> of <b>fresh lemon juice</b> and <b>simple syrup</b>",
             "Classic cocktails that use lemons and limes include: whiskey sour, long island iced tea, cosmopolitan cocktail"
         ],
         "next": "5",
@@ -66,9 +66,9 @@ learn_data = {
         "title": "Key Ingredient: Gin",
         "media": "https://i.pinimg.com/originals/8e/c8/a1/8ec8a19b86d10e65b356c89e30af7fa6.png",
         "content": [
-            "Gin is a distilled spirit that is made from grain and flavored with botanicals.",
-            "Herbal flavor marked with citrus and spices.",
-            "Most gin is dry with a noticeable pine flavor due to its main ingredient, juniper berries."
+            "Gin is a distilled spirit that is made from <b>grain</b> and flavored with <b>botanicals</b>.",
+            "<b>Herbal flavor</b> marked with citrus and spices.",
+            "Most gin is dry with a <b>noticeable pine flavor</b> due to its main ingredient, <b>juniper berries</b>."
         ],
         "next": "6",
         "progress": "40%",
@@ -80,7 +80,7 @@ learn_data = {
         "media": "https://www.thespruceeats.com/thmb/JIUbjPCnQzDzmkP7FlZu2_rjr5U=/566x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/highball-glasses-56a170215f9b58b7d0bf49d6.jpg",
         "content": [
             "Highball and Collins glasses are used for tall mixed drinks (“highballs”).",
-            "Quite often, the highball drinks are built directly in the glass by pouring the ingredients over ice and stirring to mix."
+            "Quite often, the highball drinks are <b>built directly in the glass</b> by pouring the ingredients over ice and stirring to mix."
         ],
         "next": "7",
         "progress": "48%",
@@ -118,7 +118,7 @@ learn_data = {
         "media": "https://www.youtube.com/embed/1IsJFCcBGBw",
         "content": [
             "Pour the gin and lime juice over the ice.",
-            "Note: for a non-alcoholic drink, only pour the lime juice."
+            "<b>Note</b>: for a non-alcoholic drink, only pour the lime juice."
         ],
         "next": "10",
         "progress": "72%",
