@@ -70,11 +70,22 @@ function load_quiz(){
     $("#overall_row").append(row_for_all)
     $(".drag_able").draggable({
         cursor: "move",
-        revert: "valid",
+        revert: "invalid",
         stack:".drag_able,#drag_here"
     });
     $("#drag_here").droppable({
-      accept: ".drag_able",
+      //accept: ".drag_able",
+      accept: function(ele){
+        console.log(ele.find("img").attr("src"));
+        let eleName = ele.find("img").attr("src")
+        if(jQuery.inArray(eleName, responses["answer"]) !== -1){
+          console.log("accepted")
+          return true;
+        }else{
+          console.log("rejected")
+          return false;
+        }
+      },
       classes:{
         "ui-droppable-active": "boxMouseOver",
         "ui-droppable-hover": "highlight"      
@@ -90,6 +101,8 @@ function load_quiz(){
           $(ui.draggable).remove()
           $("#drag_here").append(quiz_next_button)
           rightAnswer()
+        }else{
+          console.log(name +" doesn't belong here");
         }
       }
     })
