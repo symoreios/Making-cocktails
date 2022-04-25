@@ -238,7 +238,7 @@ function load_quiz(){
     }
 
     function rightAnswer() {
-        $("#quiz_header").append("<div class='feedback'> Correct! </div>");
+        $("#quiz_header").append("<div class='feedback' id='feedback-green'> Correct! </div>");
         $(question_col).append(quiz_next_button);
       $.ajax({
         type: "POST",
@@ -261,7 +261,7 @@ function load_quiz(){
       
     }
     function wrongAnswer() {
-      $("#quiz_header").append("<div class='feedback'> Incorrect! </div>");
+      $("#quiz_header").append("<div class='feedback' id='feedback-red'> Incorrect! </div>");
       let quiz_review_button = $('<button />').attr({
         'title': 'quiz review button',
         'class': 'btn btn-outline-warning my-2 my-sm-0',

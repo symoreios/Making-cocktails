@@ -13,8 +13,8 @@ learn_data = {
         "title": "Gin Rickey: An Overview",
         "media": "https://zestfulkitchen.com/wp-content/uploads/2020/08/gin-rickey_for-web-4.jpg",
         "content": [
-            "The gin rickey is for people who like tart, bracing cocktails.",
-            "With no sugar or simple syrup, this cocktail is quite sour, dry and exceptionally refreshing.",
+            "The gin rickey is for people who like <b>tart, bracing</b> cocktails.",
+            "With <i>no</i> sugar or simple syrup, this cocktail is quite <b>sour, dry</b> and exceptionally <b>refreshing</br>.",
             "Use quality club soda. Fresh squeezed lime is also essential."
         ],
         "next": "2",
