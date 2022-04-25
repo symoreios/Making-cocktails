@@ -47,8 +47,8 @@ function display_learn_data(data) {
         $("#learn-media").empty()
 
         let video = $('<iframe />').attr({
-            'width': '400',
-            'height': '400',
+            'width': '525',
+            'height': '525',
             'src': data["media"],
             'title': 'YouTube video player',
             'frameborder': '0',
