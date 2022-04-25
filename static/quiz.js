@@ -1,4 +1,28 @@
 function load_quiz(){
+  function rightAnswer() {
+    $("#quiz_header").append("<div class='feedback' id='feedback-green'> Correct! </div>");
+    // $(question_col).append(quiz_next_button);
+  $.ajax({
+    type: "POST",
+    url: "/track_answers",
+    cache: false,
+    dataType: "json",
+    contentType: "application/json; charset=utf-8",
+    data: JSON.stringify(correct),
+
+    success: function (correct_answer) {
+      let correct = correct_answer;
+    },
+    error: function (request, status, error) {
+      console.log("Error");
+      console.log(request);
+      console.log(status);
+      console.log(error);
+    },
+  });
+  
+}
+
   let quiz_next_button = $(
     "<div class='next'> <button class='btn btn-outline-warning my-2 my-sm-0 btn-lg' input type='button'>Next</button>"
   );
@@ -14,6 +38,10 @@ function load_quiz(){
 });
   //first is If statement for drag and drop images
   if(question["id"] == "6"){
+    $("#first_row").remove()
+     $("#second_row").remove()
+     $("#third_row").remove()
+     $("#fourth_row").remove()
     let count = 0
     let quiz_head = $(
       "<div class='row'>  <div class='col-12'>" +
@@ -32,7 +60,7 @@ function load_quiz(){
     let row_for_all = $("<div class='row'>")
 
     let row_for_pictures = $("<div class='row'>")
-    let row_for_drop = $("<div class='row'> <div class= 'col-12'>" + "Drag ingredients here! </div> </div>")
+    let row_for_drop = $("<div class='row'> <div class= 'col-12'>" +  "Drag ingredients here! </div> </div>")
     $.each(responses["image_list"], function (i, answer) {
       let class_for_pic = $("<div class='drag_able col-2'> <p> <img src='" + answer + "'> </p> </div> ")
       $(row_for_pictures).append(class_for_pic)
@@ -61,12 +89,14 @@ function load_quiz(){
           $(ui.draggable).remove()
           $("#quiz_header").append("<div class='feedback'> Correct! </div>");
           $("#drag_here").append(quiz_next_button)
+          rightAnswer()
         }
       }
     })
   }
   //this is for moving the steps into the correct order 
     else if (question["id"]==7){
+      $("#drag_here").remove()
     let counter = 0
     let correct_counter = 1
     let row_for_everything = $("<div class='row'>");
@@ -89,93 +119,95 @@ function load_quiz(){
     $("#third_row").append("3. ")
     $("#fourth_row").append("4. ")
     $("#first_row").droppable({
-      accept: ".drag_able",
+      accept: ".drag_me",
       drop: function(event, ui){
         let name = ui.draggable.text();
         $("#first_row").append(name)
         $(ui.draggable).remove()
         counter +=1
         $("#droppable_spots").append(quiz_next_button)
-        console.log(counter)
-        console.log(correct_counter)
         if(name == "Fill a highball glass with ice."){
           correct_counter +=1
+          rightAnswer()
         }
       }
     },
     )
     $("#second_row").droppable({
-      accept: ".drag_able",
+      accept: ".drag_me",
       drop: function(event, ui){
         let name = ui.draggable.text();
         $("#second_row").append(name)
         $(ui.draggable).remove()
         counter +=1
-        console.log(counter)
-        console.log(correct_counter)
+        $("#droppable_spots").append(quiz_next_button)
         if(name == "Pour the gin and lime juice over the ice."){
           correct_counter +=1
+          rightAnswer()
         }
         
       }
     }
     ),
     $("#third_row").droppable({
-      accept: ".drag_able",
+      accept: ".drag_me",
       drop: function(event, ui){
         let name = ui.draggable.text();
         $("#third_row").append(name)
         $(ui.draggable).remove()
         counter +=1
-        console.log(counter)
-        console.log(correct_counter)
+        $("#droppable_spots").append(quiz_next_button)
         if(name == "Top with club soda."){
           correct_counter +=1
+          rightAnswer()
         }
         
       }
     },
     )
     $("#fourth_row").droppable({
-      accept: ".drag_able",
+      accept: ".drag_me",
       drop: function(event, ui){
         let name = ui.draggable.text();
         $("#fourth_row").append(name)
         $(ui.draggable).remove()
         counter +=1
-        console.log(counter)
-        console.log(correct_counter)
+        $("#droppable_spots").append(quiz_next_button)
         if(name == "Garnish with a lime wedge."){
           correct_counter +=1
+          rightAnswer()
         }       
       }
     },
     )
-    if(counter == 4){
-      if (correct_counter == 4){
-        console.log("nice")
-      }
-    }
+    // if(counter >= 1){
+    //   $("#droppable_spots").append(quiz_next_button)
+    // }
     
   
     let quiz_question = $(
-      "<div class='row'>  <div class='col-12'>" +
+      "<div class='row'>  <div class='col-12'> " +
         question["question"] +
         "</div> </div>"
     );
     $("#quiz_quest").append(quiz_question);
     $.each(responses["response_list"], function (i, answer) {
-      $("#draggable_questions").append("<div class='drag_able col-10'>" + answer);
+      $("#draggable_questions").append("<div class='drag_me col-10'>" + answer);
     })  
  //   $(row_for_everything).prepend(question_col)
   //  $("#overall_row").append(row_for_everything);
-    $(".drag_able").draggable({
+    $(".drag_me").draggable({
       cursor: "move",
       revert: "valid",
   });
   }
   //all other questions
    else{
+     $("#drag_here").remove()
+     $("#first_row").remove()
+     $("#second_row").remove()
+     $("#third_row").remove()
+     $("#fourth_row").remove()
     let row_for_everything = $("<div class='row'>");
     let question_col = $("<div class='col-5'>");
     let image_col = $("<div class='col-7'>");
@@ -212,6 +244,7 @@ function load_quiz(){
         $(".review_button").remove();
         $(".feedback").remove();
         let user_attempt = answer;
+        $(question_col).append(quiz_next_button);
         if (user_attempt == responses["answer"]) {
           rightAnswer();
           
@@ -222,14 +255,7 @@ function load_quiz(){
     });
     $("#overall_row").append(row_for_everything);
 
-    // let quiz_next_button = $(
-    //   "<div class='next'> <button class='next_button' input type='button'> Next </button>"
-    // );
-
-    // $(quiz_next_button).click(function (e) {
-    //   let next_number = question["next_quiz"];
-    //   window.location.href = "/quiz/" + next_number;
-    // });
+    
 
     if (question["next_quiz"] === "8") {
       $(quiz_next_button).click(function (e) {
@@ -237,29 +263,29 @@ function load_quiz(){
       });
     }
 
-    function rightAnswer() {
-        $("#quiz_header").append("<div class='feedback' id='feedback-green'> Correct! </div>");
-        $(question_col).append(quiz_next_button);
-      $.ajax({
-        type: "POST",
-        url: "/track_answers",
-        cache: false,
-        dataType: "json",
-        contentType: "application/json; charset=utf-8",
-        data: JSON.stringify(correct),
+    // function rightAnswer() {
+    //     $("#quiz_header").append("<div class='feedback' id='feedback-green'> Correct! </div>");
+    //     $(question_col).append(quiz_next_button);
+    //   $.ajax({
+    //     type: "POST",
+    //     url: "/track_answers",
+    //     cache: false,
+    //     dataType: "json",
+    //     contentType: "application/json; charset=utf-8",
+    //     data: JSON.stringify(correct),
 
-        success: function (correct_answer) {
-          let correct = correct_answer;
-        },
-        error: function (request, status, error) {
-          console.log("Error");
-          console.log(request);
-          console.log(status);
-          console.log(error);
-        },
-      });
+    //     success: function (correct_answer) {
+    //       let correct = correct_answer;
+    //     },
+    //     error: function (request, status, error) {
+    //       console.log("Error");
+    //       console.log(request);
+    //       console.log(status);
+    //       console.log(error);
+    //     },
+    //   });
       
-    }
+    //}
     function wrongAnswer() {
       $("#quiz_header").append("<div class='feedback' id='feedback-red'> Incorrect! </div>");
       let quiz_review_button = $('<button />').attr({

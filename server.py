@@ -110,7 +110,7 @@ learn_data = {
         "next": "9",
         "progress": "64%",
         "enter-time": None,
-        "picture" : "https://www.thespruceeats.com/thmb/zRbsCD6uzcbdUdlq1EAi3DfUsgQ=/580x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/gin-rickey-recipe-760083-step-02-0272d50d178040758c824161a89da920.jpg"
+        "picture": "https://www.thespruceeats.com/thmb/zRbsCD6uzcbdUdlq1EAi3DfUsgQ=/580x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/gin-rickey-recipe-760083-step-02-0272d50d178040758c824161a89da920.jpg"
     },
     "9": {
         "id": "9",
@@ -246,8 +246,8 @@ quiz_responses = {
     "6": {
         "id": "6",
         "response_list": ["placeholder so the page loads"],
-        "image_list": ["https://www.thespruceeats.com/thmb/D1LPSjj9dhYrH4JIDKVmEYOdutE=/1500x844/smart/filters:no_upscale()/bar-glassware-tour-759984_V3-256688a32766449890dbddfb50bab7e6.png", "https://www.thespruceeats.com/thmb/JIUbjPCnQzDzmkP7FlZu2_rjr5U=/566x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/highball-glasses-56a170215f9b58b7d0bf49d6.jpg", "https://static.specsonline.com/wp-content/uploads/2020/10/001660051470.jpg", "https://static.specsonline.com/wp-content/uploads/2020/10/001660050570.jpg", "https://dydza6t6xitx6.cloudfront.net/ci-bombay-sapphire-4967085f606d9efa.jpeg", "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Lime_-_whole_and_halved.jpg/1200px-Lime_-_whole_and_halved.jpg", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTn2lNjDqo6EuAA3peELcA4IXLKSfhZmfPIfw&usqp=CAU", "https://www.totalwine.com/dynamic/x490,sq/media/sys_master/twmmedia/h31/h65/12913226874910.png"],
-        "answer": ["https://www.thespruceeats.com/thmb/D1LPSjj9dhYrH4JIDKVmEYOdutE=/1500x844/smart/filters:no_upscale()/bar-glassware-tour-759984_V3-256688a32766449890dbddfb50bab7e6.png",  "https://static.specsonline.com/wp-content/uploads/2020/10/001660051470.jpg", "https://dydza6t6xitx6.cloudfront.net/ci-bombay-sapphire-4967085f606d9efa.jpeg", "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Lime_-_whole_and_halved.jpg/1200px-Lime_-_whole_and_halved.jpg", ]
+        "image_list": ["https://caterrent.com/store/wp-content/uploads/2018/10/GLAS34_1-1.jpg", "https://static.specsonline.com/wp-content/uploads/2020/10/001660051470.jpg", "https://static.specsonline.com/wp-content/uploads/2020/10/001660050570.jpg", "https://dydza6t6xitx6.cloudfront.net/ci-bombay-sapphire-4967085f606d9efa.jpeg", "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Lime_-_whole_and_halved.jpg/1200px-Lime_-_whole_and_halved.jpg", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTn2lNjDqo6EuAA3peELcA4IXLKSfhZmfPIfw&usqp=CAU", "https://www.totalwine.com/dynamic/x490,sq/media/sys_master/twmmedia/h31/h65/12913226874910.png", "https://img.thewhiskyexchange.com/900/glass_chi5.jpg", "https://www.clearwaycommunitysolar.com/wp-content/uploads/2019/05/iStock-177131518.jpg"],
+        "answer": ["https://static.specsonline.com/wp-content/uploads/2020/10/001660051470.jpg", "https://dydza6t6xitx6.cloudfront.net/ci-bombay-sapphire-4967085f606d9efa.jpeg", "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Lime_-_whole_and_halved.jpg/1200px-Lime_-_whole_and_halved.jpg", "https://img.thewhiskyexchange.com/900/glass_chi5.jpg", "https://www.clearwaycommunitysolar.com/wp-content/uploads/2019/05/iStock-177131518.jpg"]
     },
     "7": {
         "id": "7",
@@ -285,8 +285,8 @@ def transition():
 @app.route("/review")
 def review():
     global learn_data
-    review_ = [i for i in range(3,9)]
-    return render_template('review.html',data=learn_data,review_file=review_)
+    review_ = [i for i in range(3, 9)]
+    return render_template('review.html', data=learn_data, review_file=review_)
 
 
 @app.route("/quiz/<id>", methods=['GET', 'POST'])
