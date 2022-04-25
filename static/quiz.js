@@ -87,7 +87,6 @@ function load_quiz(){
           $("#drag_here").prepend("<div class='drop_counter'>"  + count + "/6")
           $(row_for_drop).append("<div class = 'col-3'> <img src='" + name + "'> </div>")
           $(ui.draggable).remove()
-          $("#quiz_header").append("<div class='feedback'> Correct! </div>");
           $("#drag_here").append(quiz_next_button)
           rightAnswer()
         }
