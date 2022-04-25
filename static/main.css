@@ -124,7 +124,10 @@ img {
 ul.bulletpoints {
   list-style-type: square;
 }
-
+.review-tag{
+  width:450px;
+  height:120px;
+}
 #drag_here {
   text-align: center;
   font-weight: bolder;
