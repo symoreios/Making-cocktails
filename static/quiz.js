@@ -96,7 +96,7 @@ function load_quiz(){
   }
   //this is for moving the steps into the correct order 
     else if (question["id"]==7){
-      $("#drag_here").remove(g)
+      $("#drag_here").remove()
     let counter = 0
     let correct_counter = 1
     let row_for_everything = $("<div class='row'>");
@@ -128,6 +128,9 @@ function load_quiz(){
         $("#droppable_spots").append(quiz_next_button)
         if(name == "Fill a highball glass with ice."){
           correct_counter +=1
+          if(correct_counter > 1){
+            $("#feedback-green").remove()
+          }
           rightAnswer()
         }
       }
@@ -143,6 +146,9 @@ function load_quiz(){
         $("#droppable_spots").append(quiz_next_button)
         if(name == "Pour the gin and lime juice over the ice."){
           correct_counter +=1
+          if(correct_counter > 1){
+            $("#feedback-green").remove()
+          }
           rightAnswer()
         }
         
@@ -159,6 +165,9 @@ function load_quiz(){
         $("#droppable_spots").append(quiz_next_button)
         if(name == "Top with club soda."){
           correct_counter +=1
+          if(correct_counter > 1){
+            $("#feedback-green").remove()
+          }
           rightAnswer()
         }
         
@@ -175,6 +184,9 @@ function load_quiz(){
         $("#droppable_spots").append(quiz_next_button)
         if(name == "Garnish with a lime wedge."){
           correct_counter +=1
+          if(correct_counter > 1){
+            $("#feedback-green").remove()
+          }
           rightAnswer()
         }       
       }
