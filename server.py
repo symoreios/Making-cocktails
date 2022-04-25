@@ -206,7 +206,7 @@ quiz_questions = {
     },
     "7": {
         "id": "7",
-        "question": "Shuffle the recipe steps to the right order",
+        "question": "Move the recipe steps to the right order",
         "image": "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/tc-gin-index-1568659712.jpg?crop=1.00xw:1.00xh;0,0&resize=1200:*",
         "next_quiz": "8"
     }
@@ -250,7 +250,7 @@ quiz_responses = {
     },
     "7": {
         "id": "7",
-        "response_list": ["Top with club soda", "Pour the gin and lime juice over the ice", "Fill a highball with ice", "Garnish with a lime wedge"],
+        "response_list": ["Top with club soda.", "Pour the gin and lime juice over the ice.", "Fill a highball glass with ice.", "Garnish with a lime wedge."],
         "answer": "placeholder so the page loads"
     }
 
