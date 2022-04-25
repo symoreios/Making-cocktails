@@ -1,8 +1,16 @@
 {% extends "layout.html" %} {% block content %}
-<script
-></script>
+<script>
+  let data = {{data|tojson}}
+  let review_file = {{review_file}}
+  console.log(data)
+  console.log(review_file)
+</script>
+<script type="text/javascript" src="{{ url_for('static', filename = 'review.js') }}"></script>
 <div class="container">
   Review page
+  <div class="row review-specific">
+  </div>
 </div>
 
 {% endblock %}
+

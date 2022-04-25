@@ -283,7 +283,9 @@ def transition():
 
 @app.route("/review")
 def review():
-    return render_template('review.html')
+    global learn_data
+    review_ = [i for i in range(3,9)]
+    return render_template('review.html',data=learn_data,review_file=review_)
 
 
 @app.route("/quiz/<id>", methods=['GET', 'POST'])
