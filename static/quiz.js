@@ -61,19 +61,6 @@ function load_quiz(){
 
     let row_for_pictures = $("<div class='row'>")
     let row_for_drop = $("<div class='row'> <div class= 'col-12'>" +  "Drag ingredients here! </div> </div>")
-    /*let row_for_drop = $(`<div class= 'col-12'>
-    <svg xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" viewBox=\"0 0 100 100\" class=\"transp\">
-    <path d="
-             M2,50
-             A50,10 0 0,0 98,50
-             A50,10 0 0,0 2,50
-             L2,75
-             A50,10,0 0,0 98,75
-             L98,50             
-             "
-          style="stroke:black"/>
-	<text x="10" y="70" font-size="8px" fill="black">Drag Ingredients Here!</text>
-  </svg></div>`)*/
     $.each(responses["image_list"], function (i, answer) {
       let class_for_pic = $("<div class='drag_able col-2'> <p> <img src='" + answer + "'> </p> </div> ")
       $(row_for_pictures).append(class_for_pic)
@@ -109,7 +96,7 @@ function load_quiz(){
   }
   //this is for moving the steps into the correct order 
     else if (question["id"]==7){
-      $("#drag_here").remove()
+      $("#drag_here").remove(g)
     let counter = 0
     let correct_counter = 1
     let row_for_everything = $("<div class='row'>");
