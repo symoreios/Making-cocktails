@@ -70,13 +70,14 @@ function load_quiz(){
     $("#overall_row").append(row_for_all)
     $(".drag_able").draggable({
         cursor: "move",
-        revert: "invalid"
+        revert: "valid",
+        stack:".drag_able,#drag_here"
     });
     $("#drag_here").droppable({
       accept: ".drag_able",
       classes:{
         "ui-droppable-active": "boxMouseOver",
-            "ui-droppable-hover": "highlight"      
+        "ui-droppable-hover": "highlight"      
       },
       drop: function(event, ui){
         let name = ui.draggable.find("img").attr("src");
