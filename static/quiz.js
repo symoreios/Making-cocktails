@@ -69,8 +69,8 @@ function load_quiz(){
     $("#drag_here").append(row_for_drop)
     $("#overall_row").append(row_for_all)
     $(".drag_able").draggable({
-      cursor: "move",
-        revert: "valid"
+        cursor: "move",
+        revert: "invalid"
     });
     $("#drag_here").droppable({
       accept: ".drag_able",
