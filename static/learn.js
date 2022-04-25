@@ -43,6 +43,23 @@ function display_learn_data(data) {
 
     $("#learn-media").append(media)
 
+    if (data["media"].includes("youtube")) {
+        $("#learn-media").empty()
+
+        let video = $('<iframe />').attr({
+            'width': '525',
+            'height': '525',
+            'src': data["media"],
+            'title': 'YouTube video player',
+            'frameborder': '0',
+            'allow': 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
+
+        })
+
+        $("#learn-media").append(video)
+
+    }
+
     let now_id = data["id"]
 
     let prev_id = parseInt(now_id) - 1

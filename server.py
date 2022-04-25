@@ -103,7 +103,7 @@ learn_data = {
     "8": {
         "id": "8",
         "title": "Gin Rickey Recipe: Step 1 of 4",
-        "media": "https://www.thespruceeats.com/thmb/zRbsCD6uzcbdUdlq1EAi3DfUsgQ=/580x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/gin-rickey-recipe-760083-step-02-0272d50d178040758c824161a89da920.jpg",
+        "media": "https://www.youtube.com/embed/lAI0AYn_Fg4",
         "content": [
             "Fill a highball glass with ice.",
         ],
@@ -114,7 +114,7 @@ learn_data = {
     "9": {
         "id": "9",
         "title": "Gin Rickey Recipe: Step 2 of 4",
-        "media": "https://www.thespruceeats.com/thmb/ApAmbMAVANn4zOMe5dL_KZMS-GY=/580x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/gin-rickey-recipe-760083-step-03-46ae6b35304140fd8ade9add990663db.jpg",
+        "media": "https://www.youtube.com/embed/1IsJFCcBGBw",
         "content": [
             "Pour the gin and lime juice over the ice.",
             "Note: for a non-alcoholic drink, only pour the lime juice."
@@ -126,7 +126,7 @@ learn_data = {
     "10": {
         "id": "10",
         "title": "Gin Rickey Recipe: Step 3 of 4",
-        "media": "https://www.thespruceeats.com/thmb/cRQRD5boRDWB2B0r-b8-m6eTU44=/580x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/gin-rickey-recipe-760083-step-04-ebe69350e4ae4ed7b812ece6512f7ba6.jpg",
+        "media": "https://www.youtube.com/embed/pH-ZrYMg2ss",
         "content": [
             "Top with club soda."
         ],
@@ -137,7 +137,7 @@ learn_data = {
     "11": {
         "id": "11",
         "title": "Gin Rickey Recipe: 4 of 4",
-        "media": "https://www.thespruceeats.com/thmb/Gh79cWU0DFjfrcLJycKvjpnISuU=/580x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/gin-rickey-recipe-760083-step-06-c80b4fd308884159b7a9c715ed3158e5.jpg",
+        "media": "https://www.youtube.com/embed/mlunB-PMRDc",
         "content": [
             "Garnish with a lime wedge. Serve and enjoy."
         ],
@@ -206,7 +206,7 @@ quiz_questions = {
     },
     "7": {
         "id": "7",
-        "question": "Shuffle the recipe steps to the right order",
+        "question": "Move the recipe steps to the right order",
         "image": "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/tc-gin-index-1568659712.jpg?crop=1.00xw:1.00xh;0,0&resize=1200:*",
         "next_quiz": "8"
     }
@@ -250,7 +250,7 @@ quiz_responses = {
     },
     "7": {
         "id": "7",
-        "response_list": ["Top with club soda", "Pour the gin and lime juice over the ice", "Fill a highball with ice", "Garnish with a lime wedge"],
+        "response_list": ["Top with club soda.", "Pour the gin and lime juice over the ice.", "Fill a highball glass with ice.", "Garnish with a lime wedge."],
         "answer": "placeholder so the page loads"
     }
 
