@@ -132,6 +132,9 @@ function load_quiz(){
           }
           rightAnswer()
         }
+        else{
+          $("#feedback-green").remove()
+        }
       }
     },
     )
@@ -149,6 +152,9 @@ function load_quiz(){
             $("#feedback-green").remove()
           }
           rightAnswer()
+        }
+        else{
+          $("#feedback-green").remove()
         }
         
       }
@@ -169,6 +175,9 @@ function load_quiz(){
           }
           rightAnswer()
         }
+        else{
+          $("#feedback-green").remove()
+        }
         
       }
     },
@@ -188,6 +197,9 @@ function load_quiz(){
           }
           rightAnswer()
         }       
+        else{
+          $("#feedback-green").remove()
+        }
       }
     },
     )
