@@ -316,11 +316,5 @@ def quizend():
     return render_template('quizend.html', correct=correct_answers)
 
 
-@app.route("/ingredientsoverview")
-def ingredientsoverview():
-    global learn_data
-    return render_template('keyingredients.html', data=learn_data)
-
-
 if __name__ == '__main__':
     app.run(debug=True)
