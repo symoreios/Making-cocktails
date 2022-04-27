@@ -91,6 +91,7 @@ function load_quiz(){
         "ui-droppable-hover": "highlight"      
       },
       drop: function(event, ui){
+        // remove alert message
         let name = ui.draggable.find("img").attr("src");
         if(jQuery.inArray(name, responses["answer"]) !== -1){
           $(".feedback").remove()
@@ -103,6 +104,7 @@ function load_quiz(){
           rightAnswer()
         }else{
           console.log(name +" doesn't belong here");
+          // add alert message
         }
       }
     })
@@ -336,7 +338,10 @@ function load_quiz(){
       $(question_col).append(quiz_next_button);
 
       $(quiz_review_button).click(function (e) {
-        window.location.href = "/learn/1";
+        //window.location.href = "/learn/1";
+        window.open('/learn/1', "_blank") || window.location.replace('/learn/1');
+        //this should open a review specifc for each quiz question
+        //this won't work if the user has an ad-block running on browser
       });
       
     }
