@@ -273,7 +273,7 @@ function load_quiz(){
     $("#quiz_quest").append(quiz_question);
     $.each(responses["response_list"], function (i, answer) {
       let clickable_response = $(
-        "<div class='response_container'> <button class='btn btn-outline-secondary my-2 my-sm-0 btn-lg' input type='button'>" +
+        "<div class='response_container'> <button class='btn btn-outline-secondary my-2 my-sm-0 btn-lg active'  input type='button'>" +
           answer +
           "</button> </div> </div>"
       );
@@ -282,6 +282,10 @@ function load_quiz(){
       $(clickable_response).click(function (e) {
         $(".review_button").remove();
         $(".feedback").remove();
+        $(clickable_response).find("button").addClass("disabled");
+        $(clickable_response).find("button").prop('disabled',true);
+        $(clickable_response).find("button").removeClass("active");
+        console.log(clickable_response.find("button"));
         let user_attempt = answer;
         $(question_col).append(quiz_next_button);
         if (user_attempt == responses["answer"]) {
