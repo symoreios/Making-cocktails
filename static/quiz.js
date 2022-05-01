@@ -273,7 +273,7 @@ function load_quiz(){
     $("#quiz_quest").append(quiz_question);
     $.each(responses["response_list"], function (i, answer) {
       let clickable_response = $(
-        "<div class='response_container'> <button class='btn btn-outline-warning my-2 my-sm-0 btn-lg' input type='button'>" +
+        "<div class='response_container'> <button class='btn btn-outline-secondary my-2 my-sm-0 btn-lg' input type='button'>" +
           answer +
           "</button> </div> </div>"
       );
@@ -339,7 +339,7 @@ function load_quiz(){
 
       $(quiz_review_button).click(function (e) {
         //window.location.href = "/learn/1";
-        window.open('/learn/1', "_blank") || window.location.replace('/learn/1');
+        window.open(`/learn/${question["review_link"]}`, "_blank") || window.location.replace(`/learn/${question["review_link"]}`);
         //this should open a review specifc for each quiz question
         //this won't work if the user has an ad-block running on browser
       });

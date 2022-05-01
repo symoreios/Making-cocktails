@@ -173,43 +173,50 @@ quiz_questions = {
         "id": "1",
         "question": "What kind of glasses does Gin Rickey require?",
         "image": "https://www.thespruceeats.com/thmb/D1LPSjj9dhYrH4JIDKVmEYOdutE=/1500x844/smart/filters:no_upscale()/bar-glassware-tour-759984_V3-256688a32766449890dbddfb50bab7e6.png",
-        "next_quiz": "2"
+        "next_quiz": "2",
+        "review_link":"6"
     },
     "2": {
         "id": "2",
         "question": "What is the key ingredient that a Gin Rickey requires?",
         "image": "https://thumbor.thedailymeal.com/4tLyujJT4s28HQcg3KaV0VjylwM=/870x565/https://www.thedailymeal.com/sites/default/files/story/2016/clubsodalime.JPG",
-        "next_quiz": "3"
+        "next_quiz": "3",
+        "review_link": "3"
     },
     "3": {
         "id": "3",
         "question": "What does club soda do in a recipe?",
         "image": "https://m.media-amazon.com/images/I/61GNZHrnmzL._SL1500_.jpg",
-        "next_quiz": "4"
+        "next_quiz": "4",
+        "review_link":"3"
     },
     "4": {
         "id": "4",
         "question": "What is gin's flavor profile?",
         "image": "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/gin-brands-1648499521.jpg?crop=0.904xw:0.810xh;0.0455xw,0.0816xh&resize=1200:*",
-        "next_quiz": "5"
+        "next_quiz": "5",
+        "review_link":"5"
     },
     "5": {
         "id": "5",
         "question": "Why is most gin dry with a noticeable pine flavor?",
         "image": "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/tc-gin-index-1568659712.jpg?crop=1.00xw:1.00xh;0,0&resize=1200:*",
-        "next_quiz": "6"
+        "next_quiz": "6",
+        "review_link":"5"
     },
     "6": {
         "id": "6",
         "question": "Drag and drop placeholder",
         "image": "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/tc-gin-index-1568659712.jpg?crop=1.00xw:1.00xh;0,0&resize=1200:*",
-        "next_quiz": "7"
+        "next_quiz": "7",
+        "review_link":"7"
     },
     "7": {
         "id": "7",
         "question": "Move the recipe steps to the right order",
         "image": "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/tc-gin-index-1568659712.jpg?crop=1.00xw:1.00xh;0,0&resize=1200:*",
-        "next_quiz": "8"
+        "next_quiz": "8",
+        "review_link":"12"
     }
 
 }
