@@ -95,6 +95,13 @@
 img {
   max-width: 100%;
 }
+
+#quiz_header {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: x-large;
+}
+
 #quiz_image {
   padding-left: 500px;
 }
@@ -133,9 +140,12 @@ li {
 }
 #feedback-green {
   color: green;
+  font-weight: bold;
 }
 #feedback-red {
   color: red;
+  font-weight: bold;
+  margin-right: 5px;
 }
 #drag_here {
   text-align: center;

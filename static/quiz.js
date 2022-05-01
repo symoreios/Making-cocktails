@@ -330,15 +330,15 @@ function load_quiz(){
       
     //}
     function wrongAnswer() {
-      $("#quiz_header").append("<div class='feedback' id='feedback-red'> Incorrect! </div>");
+      $("#quiz_correct").append("<span class='feedback' id='feedback-red'> Incorrect! </span>");
       let quiz_review_button = $('<button />').attr({
         'title': 'quiz review button',
         'class': 'btn btn-outline-warning my-2 my-sm-0',
       })
       $(quiz_review_button).append("Review")
-      let quiz_review_class = $("<div class='review_button'>")
+      let quiz_review_class = $("<span class='review_button'>")
       $(quiz_review_class).append(quiz_review_button)
-      $("#quiz_header").append(quiz_review_class);
+      $("#quiz_correct").append(quiz_review_class);
       $(question_col).append(quiz_next_button);
 
       $(quiz_review_button).click(function (e) {
