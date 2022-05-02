@@ -271,6 +271,13 @@ def hello_cocktail():
     return render_template('home.html')
 
 
+@app.route("/quiz/start", methods=['GET', 'POST'])
+def startquiz():
+    global correct_answers
+    correct_answers = 0
+    return render_template('quizstart.html')
+
+
 @app.route("/learn/<id>")
 def learning(id=None):
     global learn_data
@@ -301,6 +308,9 @@ def quiz(id=None):
     global quiz_questions
     global quiz_responses
     global correct_answers
+    if id == 1:
+        correct_answers = 0
+
     quiz_question_number = quiz_questions[id]
     quiz_response_number = quiz_responses[id]
     correct_responses = correct_answers

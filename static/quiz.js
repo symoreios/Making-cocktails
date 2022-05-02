@@ -24,7 +24,7 @@ function load_quiz(){
 }
 
   let quiz_next_button = $(
-    "<div class='next'> <button class='btn btn-outline-warning my-2 my-sm-0 btn-lg' input type='button'>Next</button>"
+    "<div class='next'> <button class='btn btn-outline-warning my-2 my-sm-0 btn-lg' id='next_button' input type='button'>Next</button>"
   );
 
   $(quiz_next_button).click(function (e) {
@@ -97,12 +97,16 @@ function load_quiz(){
           $(".feedback").remove()
           $(".drop_counter").remove()
           count +=1
+          correct +=1
           $("#drag_here").prepend("<div class='drop_counter'>"  + count + "/6")
           $(row_for_drop).append("<div class = 'col-3'> <img src='" + name + "'> </div>")
           $(ui.draggable).remove()
-          $("#drag_here").append(quiz_next_button)
+          if(count == 6){
+            $("#drag_here").append(quiz_next_button)
+          }
           rightAnswer()
         }else{
+          $("#quiz_header").append("Incorrect!")
           console.log(name +" doesn't belong here");
           // add alert message
         }
@@ -114,6 +118,8 @@ function load_quiz(){
       $("#drag_here").remove()
     let counter = 0
     let correct_counter = 1
+    let next_button_counter = 0
+    
     let row_for_everything = $("<div class='row'>");
     let question_col = $("<div class='col-7'>");
     let drop_here_col = $("<div class='col-5'>");
@@ -140,9 +146,14 @@ function load_quiz(){
         $("#first_row").append(name)
         $(ui.draggable).remove()
         counter +=1
-        $("#droppable_spots").append(quiz_next_button)
+        next_button_counter +=1
+        if(next_button_counter == 4){
+          $("#droppable_spots").append(quiz_next_button)
+       }
+        console.log(next_button_counter)
         if(name == "Fill a highball glass with ice."){
           correct_counter +=1
+          correct +=1
           if(correct_counter > 1){
             $("#feedback-green").remove()
           }
@@ -161,8 +172,13 @@ function load_quiz(){
         $("#second_row").append(name)
         $(ui.draggable).remove()
         counter +=1
-        $("#droppable_spots").append(quiz_next_button)
+        next_button_counter +=1
+        console.log(next_button_counter)
+        if(next_button_counter == 4){
+          $("#droppable_spots").append(quiz_next_button)
+       }
         if(name == "Pour the gin and lime juice over the ice."){
+          correct +=1
           correct_counter +=1
           if(correct_counter > 1){
             $("#feedback-green").remove()
@@ -183,8 +199,16 @@ function load_quiz(){
         $("#third_row").append(name)
         $(ui.draggable).remove()
         counter +=1
-        $("#droppable_spots").append(quiz_next_button)
+        next_button_counter +=1
+        console.log(next_button_counter)
+        if(next_button_counter == 4){
+
+          $("#droppable_spots").append(quiz_next_button)
+
+       }
         if(name == "Top with club soda."){
+          correct +=1
+
           correct_counter +=1
           if(correct_counter > 1){
             $("#feedback-green").remove()
@@ -205,8 +229,15 @@ function load_quiz(){
         $("#fourth_row").append(name)
         $(ui.draggable).remove()
         counter +=1
-        $("#droppable_spots").append(quiz_next_button)
+        next_button_counter +=1
+        console.log(next_button_counter)
+        if(next_button_counter == 4){
+          $("#droppable_spots").append(quiz_next_button)
+      
+       }
         if(name == "Garnish with a lime wedge."){
+          correct +=1
+
           correct_counter +=1
           if(correct_counter > 1){
             $("#feedback-green").remove()
@@ -242,6 +273,8 @@ function load_quiz(){
   }
   //all other questions
    else{
+     incorrect_counter = 0 
+     
      $("#drag_here").remove()
      $("#first_row").remove()
      $("#second_row").remove()
@@ -285,13 +318,22 @@ function load_quiz(){
         $(clickable_response).find("button").addClass("disabled");
         $(clickable_response).find("button").prop('disabled',true);
         $(clickable_response).find("button").removeClass("active");
-        console.log(clickable_response.find("button"));
+    //    console.log(clickable_response.find("button"));
         let user_attempt = answer;
         $(question_col).append(quiz_next_button);
         if (user_attempt == responses["answer"]) {
+        $(clickable_response).find(".button").removeClass("active");
+        $(':button').prop('disabled', true); 
+        $("#next_button").removeAttr('disabled');
           rightAnswer();
           
         } else {
+          incorrect_counter +=1
+          console.log(incorrect_counter)
+          if(incorrect_counter == 2){
+            $(':button').prop('disabled',true)
+            $("#next_button").removeAttr('disabled')
+          }
           wrongAnswer();
         }
       });

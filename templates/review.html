@@ -1,5 +1,8 @@
 {% extends "layout.html" %} {% block content %}
-<script type="text/javascript" src="{{ url_for('static', filename = 'review.js') }}"></script>
+<script
+  type="text/javascript"
+  src="{{ url_for('static', filename = 'review.js') }}"
+></script>
 <script>
   let data = {{data|tojson}}
   let review_file = {{review_file}}
@@ -7,25 +10,21 @@
   console.log(review_file)
 </script>
 <div class="container">
-  <div class="header-content">
-    Review!
-  </div>
+  <div class="header-content">Review!</div>
   <a>Click on a card to review content</a>
-  <hr>
-  <div class="row review-specific">
-  </div>
+  <hr />
+  <div class="row review-specific"></div>
   <div class="row quiz">
     <div class="col-12 review-button-div">
-        <button
-          type="button"
-          class="btn btn-outline-warning my-2 btn-lg"
-          id="review-page-btn-quiz"
-        >
-          Go to quiz!
-        </button>
-      </div>
+      <button
+        type="button"
+        class="btn btn-outline-warning my-2 btn-lg"
+        id="review-page-btn-quiz"
+      >
+        Go to quiz!
+      </button>
+    </div>
   </div>
 </div>
 
 {% endblock %}
-
