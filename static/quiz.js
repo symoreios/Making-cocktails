@@ -95,6 +95,7 @@ function load_quiz(){
         let name = ui.draggable.find("img").attr("src");
         if(jQuery.inArray(name, responses["answer"]) !== -1){
           $(".feedback").remove()
+          $(".incorrect").remove()
           $(".drop_counter").remove()
           count +=1
           correct +=1
@@ -106,7 +107,9 @@ function load_quiz(){
           }
           rightAnswer()
         }else{
-          $("#quiz_header").append("Incorrect!")
+          $(".incorrect").remove()
+          $(".feedback").remove()
+          $("#quiz_header").append("<div class='incorrect'>" + "Incorrect!" + "</div>")
           console.log(name +" doesn't belong here");
           // add alert message
         }
@@ -152,6 +155,7 @@ function load_quiz(){
        }
         console.log(next_button_counter)
         if(name == "Fill a highball glass with ice."){
+          $("#first_row").css("border", "green solid 10px")
           correct_counter +=1
           correct +=1
           if(correct_counter > 1){
@@ -178,6 +182,7 @@ function load_quiz(){
           $("#droppable_spots").append(quiz_next_button)
        }
         if(name == "Pour the gin and lime juice over the ice."){
+          $("#second_row").css("border", "green solid 10px")
           correct +=1
           correct_counter +=1
           if(correct_counter > 1){
@@ -208,7 +213,7 @@ function load_quiz(){
        }
         if(name == "Top with club soda."){
           correct +=1
-
+          $("#third_row").css("border", "green solid 10px")
           correct_counter +=1
           if(correct_counter > 1){
             $("#feedback-green").remove()
@@ -237,7 +242,7 @@ function load_quiz(){
        }
         if(name == "Garnish with a lime wedge."){
           correct +=1
-
+          $("#fourth_row").css("border", "green solid 10px")
           correct_counter +=1
           if(correct_counter > 1){
             $("#feedback-green").remove()

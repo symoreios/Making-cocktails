@@ -271,13 +271,6 @@ def hello_cocktail():
     return render_template('home.html')
 
 
-@app.route("/quiz/start", methods=['GET', 'POST'])
-def startquiz():
-    global correct_answers
-    correct_answers = 0
-    return render_template('quizstart.html')
-
-
 @app.route("/learn/<id>")
 def learning(id=None):
     global learn_data
