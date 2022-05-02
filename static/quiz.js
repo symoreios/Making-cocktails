@@ -170,6 +170,7 @@ function load_quiz(){
           rightAnswer()
         }
         else{
+          $("#first_row").css("border", "red solid 10px")
           $("#feedback-green").remove()
         }
       }
@@ -197,6 +198,7 @@ function load_quiz(){
           rightAnswer()
         }
         else{
+          $("#second_row").css("border", "red solid 10px")
           $("#feedback-green").remove()
         }
         
@@ -227,6 +229,7 @@ function load_quiz(){
           rightAnswer()
         }
         else{
+          $("#third_row").css("border", "red solid 10px")
           $("#feedback-green").remove()
         }
         
@@ -256,6 +259,7 @@ function load_quiz(){
           rightAnswer()
         }       
         else{
+          $("#fourth_row").css("border", "red solid 10px")
           $("#feedback-green").remove()
         }
       }
