@@ -2,26 +2,30 @@ function load_quiz(){
   function rightAnswer() {
     $("#quiz_correct").append("<div class='feedback' id='feedback-green'> Correct! </div>");
     // $(question_col).append(quiz_next_button);
-  $.ajax({
-    type: "POST",
-    url: "/track_answers",
-    cache: false,
-    dataType: "json",
-    contentType: "application/json; charset=utf-8",
-    data: JSON.stringify(correct),
-
-    success: function (correct_answer) {
-      let correct = correct_answer;
-    },
-    error: function (request, status, error) {
-      console.log("Error");
-      console.log(request);
-      console.log(status);
-      console.log(error);
-    },
-  });
+    let correct_object = {
+      'questionId':question["id"],'correct': correct, 'correct_answers_6': correct_answers_6,'correct_answers_7': correct_answers_7
+    }
+    $.ajax({
+      type: "POST",
+      url: "/track_answers",
+      cache: false,
+      dataType: "json",
+      contentType: "application/json; charset=utf-8",
+      //data: JSON.stringify(correct),
+      data : JSON.stringify(correct_object),
+      success: function (correct_answer) {
+        let correct = correct_answer;
+        //console.log(`After rightAnswer fn, this is correct answer ${correct_answer}`)
+      },
+      error: function (request, status, error) {
+        console.log("Error");
+        console.log(request);
+        console.log(status);
+        console.log(error);
+      },
+    });
   
-}
+  }
 
   let quiz_next_button = $(
     "<div class='next'> <button class='btn btn-outline-warning my-2 my-sm-0 btn-lg' id='next_button' input type='button'>Next</button>"
@@ -97,7 +101,9 @@ function load_quiz(){
           $(".feedback").remove()
           $(".drop_counter").remove()
           count +=1
-          correct +=1
+          //console.log(`After rightAnswer fn, this is correct in drop fn ${correct}`)
+          correct_answers_6 +=1
+          //console.log(`After rightAnswer fn, correct has been incr in drop fn ${correct}`)
           $("#drag_here").prepend("<div class='drop_counter'>"  + count + "/6")
           $(row_for_drop).append("<div class = 'col-3'> <img src='" + name + "'> </div>")
           $(ui.draggable).remove()
@@ -153,7 +159,7 @@ function load_quiz(){
         console.log(next_button_counter)
         if(name == "Fill a highball glass with ice."){
           correct_counter +=1
-          correct +=1
+          correct_answers_7 +=1
           if(correct_counter > 1){
             $("#feedback-green").remove()
           }
@@ -178,7 +184,7 @@ function load_quiz(){
           $("#droppable_spots").append(quiz_next_button)
        }
         if(name == "Pour the gin and lime juice over the ice."){
-          correct +=1
+          correct_answers_7 +=1
           correct_counter +=1
           if(correct_counter > 1){
             $("#feedback-green").remove()
@@ -207,8 +213,7 @@ function load_quiz(){
 
        }
         if(name == "Top with club soda."){
-          correct +=1
-
+          correct_answers_7 +=1
           correct_counter +=1
           if(correct_counter > 1){
             $("#feedback-green").remove()
@@ -236,8 +241,7 @@ function load_quiz(){
       
        }
         if(name == "Garnish with a lime wedge."){
-          correct +=1
-
+          correct_answers_7 +=1
           correct_counter +=1
           if(correct_counter > 1){
             $("#feedback-green").remove()

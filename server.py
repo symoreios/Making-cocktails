@@ -264,6 +264,8 @@ quiz_responses = {
 
 }
 correct_answers = 0
+correct_answers_6 =0
+correct_answers_7= 0
 
 
 @app.route("/")
@@ -308,6 +310,8 @@ def quiz(id=None):
     global quiz_questions
     global quiz_responses
     global correct_answers
+    global correct_answers_6
+    global correct_answers_7
     if id == 1:
         correct_answers = 0
 
@@ -315,22 +319,40 @@ def quiz(id=None):
     quiz_response_number = quiz_responses[id]
     correct_responses = correct_answers
 
-    return render_template('quiz.html', quiz_question=quiz_question_number, quiz_options=quiz_response_number, correct=correct_responses)
+    return render_template('quiz.html', quiz_question=quiz_question_number, quiz_options=quiz_response_number, 
+    correct=correct_responses, correct_answers_6 = correct_answers_6,correct_answers_7=correct_answers_7)
 
 
 @app.route("/track_answers", methods=['GET', 'POST'])
 def track_answers():
     global correct_answers
+    global correct_answers_6
+    global correct_answers_7
     json_data = request.get_json()
-    correct_answers = json_data
-    correct_answers += 1
-    return jsonify(correct_answers)
+    print(json_data)
+    if(int(json_data['questionId']) < 6):
+        correct_answers = json_data['correct']
+        correct_answers += 1
+    elif (int(json_data['questionId']) == 6):
+        correct_answers_6 = json_data['correct_answers_6']
+    else:
+        correct_answers_7 = json_data['correct_answers_7']
+    ##correct_answers += 1
+    build_dict = {
+        'correct': correct_answers, 
+        'correct_answers_6': correct_answers_6, 
+        'correct_answers_7': correct_answers_7
+    }
+    print(build_dict)
+    return jsonify(build_dict)
 
 
 @app.route("/quizend")
 def quizend():
     global correct_answers
-    return render_template('quizend.html', correct=correct_answers)
+    global correct_answers_6
+    global correct_answers_7
+    return render_template('quizend.html', correct=(correct_answers+correct_answers_6+correct_answers_7))
 
 
 if __name__ == '__main__':
