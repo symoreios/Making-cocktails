@@ -98,7 +98,8 @@ learn_data = {
         ],
         "next": "8",
         "progress": "0%",
-        "enter-time": None
+        "enter-time": None,
+        "picture":"https://www.thespruceeats.com/thmb/KWN7q_rc54d5LvlRkOPCcndEQ6Q=/580x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/gin-rickey-recipe-760083-step-01-d519ccd29d134b07a6bf3517fe14cf01.jpg"
     },
     "8": {
         "id": "8",
