@@ -1,6 +1,6 @@
 function load_quiz(){
   function rightAnswer() {
-    $("#quiz_header").append("<div class='feedback' id='feedback-green'> Correct! </div>");
+    $("#quiz_correct").append("<div class='feedback' id='feedback-green'> Correct! </div>");
     // $(question_col).append(quiz_next_button);
   $.ajax({
     type: "POST",

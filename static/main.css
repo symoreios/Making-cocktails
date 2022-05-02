@@ -108,6 +108,11 @@ img {
 #quiz_responses {
   width: 500px;
 }
+
+#quiz_correct {
+  font-size: large;
+}
+
 .next_button {
   color: black;
   background-color: yellow;
