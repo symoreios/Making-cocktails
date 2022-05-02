@@ -197,7 +197,13 @@ svg.transp {
   fill-opacity: 50%;
   fill: yellow;
 }
-
 .clickedButton{
-  border: 2px solid #ffc107;
+  border: 2px solid #ffc107; /*Bootstraps warning color */
+}
+
+.clickedButton-wrong{
+  border: 2px solid #dc3545; /*Bootstrap danger color */
+}
+.clickedButton-correct{
+  border: 2px solid #198754;  /*Bootstraps  success color */
 }

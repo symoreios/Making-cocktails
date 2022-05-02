@@ -318,16 +318,17 @@ function load_quiz(){
         $(clickable_response).find("button").addClass("disabled");
         $(clickable_response).find("button").prop('disabled',true);
         $(clickable_response).find("button").removeClass("active");
-        $(clickable_response).find("button").addClass("clickedButton");
     //    console.log(clickable_response.find("button"));
         let user_attempt = answer;
         $(question_col).append(quiz_next_button);
         if (user_attempt == responses["answer"]) {
+          $(clickable_response).find("button").addClass("clickedButton-correct");
           $(clickable_response).find(".button").removeClass("active");
           $(':button').prop('disabled', true); 
           $("#next_button").removeAttr('disabled');
           rightAnswer();
         } else {
+          $(clickable_response).find("button").addClass("clickedButton-wrong");
           incorrect_counter +=1
           console.log(incorrect_counter)
           if(incorrect_counter == 2){
