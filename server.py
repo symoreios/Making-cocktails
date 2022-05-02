@@ -345,7 +345,13 @@ def quizend():
     global correct_answers
     global correct_answers_6
     global correct_answers_7
-    return render_template('quizend.html', correct=(correct_answers+correct_answers_6+correct_answers_7))
+
+    old_score = correct_answers+correct_answers_6+correct_answers_7
+    print(old_score)
+    correct_answers = 0
+    correct_answers_6 = 0 
+    correct_answers_7 = 0
+    return render_template('quizend.html', correct=(correct_answers+correct_answers_6+correct_answers_7), old_score =old_score)
 
 
 if __name__ == '__main__':
