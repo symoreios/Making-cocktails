@@ -308,11 +308,11 @@ function load_quiz(){
       let clickable_response = $(
         "<div class='response_container'> <button class='btn btn-outline-secondary my-2 my-sm-0 btn-lg active'  input type='button'>" +
           answer +
-          "</button> </div> </div>"
+          "</button> </div>"
       );
 
       $(question_col).append(clickable_response);
-      $(clickable_response).click(function (e) {
+      $(clickable_response).find("button").click(function (e) {
         $(".review_button").remove();
         $(".feedback").remove();
         $(clickable_response).find("button").addClass("disabled");
