@@ -197,3 +197,7 @@ svg.transp {
   fill-opacity: 50%;
   fill: yellow;
 }
+
+.clickedButton{
+  border: 2px solid yellow;
+}
