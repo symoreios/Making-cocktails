@@ -19,6 +19,12 @@ function display_learn_data(data) {
 
     $(".progress").append(progress_bar)
 
+    if (parseInt(data["id"])<7) {
+        $(".progress-bar-text").append("Your Progress: Overview & Key Ingredients")
+    } else {
+        $(".progress-bar-text").append("Your Progress: Step by Step")
+    }
+
 
     $("#learn-content").append("<ul class=`bulletpoints`>")
     $.each(data["content"], function(i, datum){
