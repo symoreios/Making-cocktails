@@ -152,6 +152,11 @@ li {
   font-weight: bold;
   margin-right: 5px;
 }
+.incorrect {
+  color: red;
+  font-weight: bold;
+  margin-right: 5px;
+}
 #drag_here {
   text-align: center;
   font-weight: bolder;
@@ -197,13 +202,13 @@ svg.transp {
   fill-opacity: 50%;
   fill: yellow;
 }
-.clickedButton{
+.clickedButton {
   border: 2px solid #ffc107; /*Bootstraps warning color */
 }
 
-.clickedButton-wrong{
+.clickedButton-wrong {
   border: 2px solid #dc3545; /*Bootstrap danger color */
 }
-.clickedButton-correct{
-  border: 2px solid #198754;  /*Bootstraps  success color */
+.clickedButton-correct {
+  border: 2px solid #198754; /*Bootstraps  success color */
 }

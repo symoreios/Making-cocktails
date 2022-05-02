@@ -115,7 +115,7 @@ function load_quiz(){
         }else{
           $(".incorrect").remove()
           $(".feedback").remove()
-          $("#quiz_header").append("<div class='incorrect'>" + "Incorrect!" + "</div>")
+          $("#quiz_correct").append("<div class='incorrect'>" + "Incorrect!" + "</div>")
           console.log(name +" doesn't belong here");
           // add alert message
         }
