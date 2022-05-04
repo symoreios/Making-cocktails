@@ -319,36 +319,65 @@ function load_quiz(){
         "</div> </div>"
     );
     $("#quiz_quest").append(quiz_question);
-    $.each(responses["response_list"], function (i, answer) {
+    $.each(responses["response_list"], function (i, option) {
       let clickable_response = $(
-        "<div class='response_container'> <button class='btn btn-outline-secondary my-2 my-sm-0 btn-lg active'  input type='button'>" +
-          answer +
-          "</button> </div>"
+         "<button class='btn btn-outline-secondary my-2 my-sm-0 btn-lg active not_next'  input type='button'>" +
+          option +
+          "</button> <br> <br>"
       );
+      
+        // else if(option == responses['answer']){
+        //   let correct_button = $(
+        //     "<button class='btn btn-outline-secondary my-2 my-sm-0 btn-lg active'  input type='button'> <p>" +
+        //      option +
+        //      "</button> </p>  "
+        //  );
+        //  alert(option)
+        //  console.log(correct_button)
 
+
+        // }
       $(question_col).append(clickable_response);
-      $(clickable_response).find("button").click(function (e) {
+     
+      $(clickable_response).click(function (e) {
+     //   console.log("p:contains(" + responses['answer'] + ")")
         $(".review_button").remove();
         $(".feedback").remove();
-        $(clickable_response).find("button").addClass("disabled");
-        $(clickable_response).find("button").prop('disabled',true);
-        $(clickable_response).find("button").removeClass("active");
-    //    console.log(clickable_response.find("button"));
-        let user_attempt = answer;
+        $(clickable_response).addClass("disabled");
+        $(clickable_response).prop('disabled',true);
+        $(clickable_response).removeClass("active");
+     //   console.log(clickable_response.find("button"));
+        let user_attempt = option;
         $(question_col).append(quiz_next_button);
         if (user_attempt == responses["answer"]) {
-          $(clickable_response).find("button").addClass("clickedButton-correct");
-          $(clickable_response).find(".button").removeClass("active");
+          $(":button").css("background-color", "red")
+          $(":button").css("color", "black")
+
+     //     $(clickable_response).addClass(".correctButton");
+          $(clickable_response).css("background-color", "green")
+          $(clickable_response).css("color", "black")
+          $(clickable_response).css("font-weight", "bolder")
+          $(clickable_response).removeClass("active");
           $(':button').prop('disabled', true); 
           $("#next_button").removeAttr('disabled');
+          $("#next_button").css("background-color", "")
+          $("#next_button").css("color", "")
           rightAnswer();
         } else {
           $(clickable_response).find("button").addClass("clickedButton-wrong");
+          $(clickable_response).css("background-color", "red")
+          $(clickable_response).css("color", "black")
           incorrect_counter +=1
-          console.log(incorrect_counter)
           if(incorrect_counter == 2){
+             $(":button").css("background-color", "red")
+             $(":button").css("color", "black")
+            $("button:contains(" + responses['answer'] + ")").css("background-color", "green")
+            $("button:contains(" + responses['answer'] + ")").css("color", "black")
+            $("button:contains(" + responses['answer'] + ")").css("font-weight", "bolder")
             $(':button').prop('disabled',true)
             $("#next_button").removeAttr('disabled')
+            $("#next_button").css("background-color", "")
+            $("#next_button").css("color", "")
           }
           wrongAnswer();
         }
