@@ -4,7 +4,7 @@ function display_overview_data(data,review) {
         let row_1 = $("<div class='col-md-6'>")
         let button_1 = $('<button />').attr({
             'title': 'review button',
-            'class': 'btn btn-outline-warning my-2 my-sm-0 btn-lg review-tag',
+            'class': 'btn btn-outline-warning btn-lg review-tag',
         })
         let button_link_1 = $('<a />').attr({
             href: "/learn/"+review[i]
