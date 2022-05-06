@@ -219,12 +219,13 @@ svg.transp {
 .clickedButton-correct {
   border: 2px solid #198754; /*Bootstraps  success color */
 }
-.review-image-tag{
+.review-image-tag {
   width: 120px;
-  height:100px;
-  float:left
+  height: 100px;
+  float: left;
+  object-fit: scale-down;
 }
 
-.review-tag-text{
-  display: table-cell
+.review-tag-text {
+  display: table-cell;
 }
