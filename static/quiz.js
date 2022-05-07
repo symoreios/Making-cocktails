@@ -163,6 +163,7 @@ function load_quiz(){
        }
         console.log(next_button_counter)
         if(name == "Fill a highball glass with ice."){
+          $("#quiz_correct").empty()
           $("#first_row").empty()
           $("#first_row").text(name)
           $("#first_row").css("border", "green solid 10px")
@@ -197,6 +198,7 @@ function load_quiz(){
           $("#droppable_spots").append(quiz_next_button)
        }
         if(name == "Pour the gin and lime juice over the ice."){
+          $("#quiz_correct").empty()
           $("#second_row").empty()
           $("#second_row").text(name)
           $("#second_row").css("border", "green solid 10px")
@@ -234,6 +236,7 @@ function load_quiz(){
 
        }
         if(name == "Top with club soda."){
+          $("#quiz_correct").empty()
           $("#third_row").empty()
           $("#third_row").text(name)
           correct_answers_7 +=1
@@ -270,6 +273,7 @@ function load_quiz(){
       
        }
         if(name == "Garnish with a lime wedge."){
+          $("#quiz_correct").empty()
           $("#fourth_row").empty()
           $("#fourth_row").text(name)
           correct_answers_7 +=1
@@ -307,7 +311,20 @@ function load_quiz(){
   //  $("#overall_row").append(row_for_everything);
     $(".drag_me").draggable({
       cursor: "move",
-      revert: "invalid",
+      revert: function(droppable) {
+        if (droppable){
+          // drop is valid
+          // the code above will handle a correct drop
+        } else {
+          // drop is invalid
+          // alert("Incorrect!")
+          $("#quiz_correct").empty()
+          $("#feedback-green").remove()
+          $("#quiz_correct").append("<span class='feedback' id='feedback-red'> Incorrect! </span>");
+          $(this).css("border", "red solid 10px") // using this makes the draggable red
+        }
+        return (!droppable)
+      }
   });
   }
   //all other questions
