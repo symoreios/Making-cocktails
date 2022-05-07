@@ -78,8 +78,8 @@ function load_quiz(){
         stack:".drag_able,#drag_here"
     });
     $("#drag_here").droppable({
-      accept: ".drag_able",
-      /*accept: function(ele){
+      //accept: ".drag_able",
+      accept: function(ele){
         console.log(ele.find("img").attr("src"));
         let eleName = ele.find("img").attr("src")
         if(jQuery.inArray(eleName, responses["answer"]) !== -1){
@@ -87,9 +87,13 @@ function load_quiz(){
           return true;
         }else{
           console.log("rejected")
+          $(".incorrect").remove()
+          $(".feedback").remove()
+          $("#quiz_correct").append("<div class='incorrect'>" + "Incorrect!" + "</div>")
+          console.log(name +" doesn't belong here");
           return false;
         }
-      },*/
+      },
       classes:{
         "ui-droppable-active": "boxMouseOver",
         "ui-droppable-hover": "highlight"      
