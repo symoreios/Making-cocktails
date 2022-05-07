@@ -74,7 +74,7 @@ function load_quiz(){
     $("#overall_row").append(row_for_all)
     $(".drag_able").draggable({
         cursor: "move",
-        revert: "valid", //this should be invalid though
+        revert: "invalid", //this should be invalid though
         stack:".drag_able,#drag_here"
     });
     $("#drag_here").droppable({
@@ -149,11 +149,13 @@ function load_quiz(){
     $("#third_row").append("3. ")
     $("#fourth_row").append("4. ")
     $("#first_row").droppable({
-      accept: ".drag_me",
+      accept: function(elem){
+        return elem.hasClass('drag_me')  && elem.text().indexOf('Fill a highball glass with ice.') > -1
+      },
       drop: function(event, ui){
         let name = ui.draggable.text();
         $("#first_row").append(name)
-        $(ui.draggable).remove()
+        // $(ui.draggable).remove()
         counter +=1
         next_button_counter +=1
         if(next_button_counter == 4){
@@ -161,7 +163,11 @@ function load_quiz(){
        }
         console.log(next_button_counter)
         if(name == "Fill a highball glass with ice."){
+          $("#first_row").empty()
+          $("#first_row").text(name)
           $("#first_row").css("border", "green solid 10px")
+          $(ui.draggable).remove()
+          $("#first_row").droppable("disable")
           correct_counter +=1
           correct_answers_7 +=1
           if(correct_counter > 1){
@@ -177,11 +183,13 @@ function load_quiz(){
     },
     )
     $("#second_row").droppable({
-      accept: ".drag_me",
+      accept: function(elem){
+        return elem.hasClass('drag_me')  && elem.text().indexOf("Pour the gin and lime juice over the ice.") > -1
+      },
       drop: function(event, ui){
         let name = ui.draggable.text();
         $("#second_row").append(name)
-        $(ui.draggable).remove()
+        // $(ui.draggable).remove()
         counter +=1
         next_button_counter +=1
         console.log(next_button_counter)
@@ -189,7 +197,11 @@ function load_quiz(){
           $("#droppable_spots").append(quiz_next_button)
        }
         if(name == "Pour the gin and lime juice over the ice."){
+          $("#second_row").empty()
+          $("#second_row").text(name)
           $("#second_row").css("border", "green solid 10px")
+          $(ui.draggable).remove()
+          $("#second_row").droppable("disable")
           correct_answers_7 +=1
           correct_counter +=1
           if(correct_counter > 1){
@@ -206,11 +218,13 @@ function load_quiz(){
     }
     ),
     $("#third_row").droppable({
-      accept: ".drag_me",
+      accept: function(elem){
+        return elem.hasClass('drag_me')  && elem.text().indexOf("Top with club soda.") > -1
+      },
       drop: function(event, ui){
         let name = ui.draggable.text();
         $("#third_row").append(name)
-        $(ui.draggable).remove()
+        // $(ui.draggable).remove()
         counter +=1
         next_button_counter +=1
         console.log(next_button_counter)
@@ -220,8 +234,12 @@ function load_quiz(){
 
        }
         if(name == "Top with club soda."){
+          $("#third_row").empty()
+          $("#third_row").text(name)
           correct_answers_7 +=1
           $("#third_row").css("border", "green solid 10px")
+          $("#third_row").droppable("disable")
+          $(ui.draggable).remove()
           correct_counter +=1
           if(correct_counter > 1){
             $("#feedback-green").remove()
@@ -237,11 +255,13 @@ function load_quiz(){
     },
     )
     $("#fourth_row").droppable({
-      accept: ".drag_me",
+      accept: function(elem){
+        return elem.hasClass('drag_me')  && elem.text().indexOf("Garnish with a lime wedge.") > -1
+      },
       drop: function(event, ui){
         let name = ui.draggable.text();
         $("#fourth_row").append(name)
-        $(ui.draggable).remove()
+        // $(ui.draggable).remove()
         counter +=1
         next_button_counter +=1
         console.log(next_button_counter)
@@ -250,8 +270,12 @@ function load_quiz(){
       
        }
         if(name == "Garnish with a lime wedge."){
+          $("#fourth_row").empty()
+          $("#fourth_row").text(name)
           correct_answers_7 +=1
           $("#fourth_row").css("border", "green solid 10px")
+          $("#fourth_row").droppable("disable")
+          $(ui.draggable).remove()
           correct_counter +=1
           if(correct_counter > 1){
             $("#feedback-green").remove()
@@ -283,7 +307,7 @@ function load_quiz(){
   //  $("#overall_row").append(row_for_everything);
     $(".drag_me").draggable({
       cursor: "move",
-      revert: "valid",
+      revert: "invalid",
   });
   }
   //all other questions
