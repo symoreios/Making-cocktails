@@ -247,7 +247,7 @@ quiz_responses = {
     },
     "5": {
         "id": "5",
-        "response_list": ["Gin is almost always aged in pine barrels", "Gin is almost always aged with herbs that havea pine-like aroma",
+        "response_list": ["Gin is almost always aged in pine barrels", "Gin is almost always aged with herbs that have a pine-like aroma",
                           "Gin's main ingredient is juniper berries", "Gin's main ingredient is grains"],
         "answer": "Gin's main ingredient is juniper berries"
     },

@@ -316,6 +316,7 @@ function load_quiz(){
   //  $("#overall_row").append(row_for_everything);
     $(".drag_me").draggable({
       cursor: "move",
+      stack:"#first_row,#second_row,#third_row,#fourth_row",
       revert: function(droppable) {
         if (droppable){
           // drop is valid
