@@ -125,6 +125,10 @@ img {
   padding-top: 5px;
 }
 
+.next {
+  margin-top: 10px;
+}
+
 .response_container {
   padding: 10px;
 }

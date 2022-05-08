@@ -28,7 +28,7 @@ function load_quiz(){
   }
 
   let quiz_next_button = $(
-    "<div class='next'> <button class='btn btn-outline-warning my-2 my-sm-0 btn-lg' id='next_button' input type='button'>Next</button>"
+    "<div class='next'> <button class='btn btn-outline-warning my-sm-0 btn-lg' id='next_button' input type='button'>Next</button>"
   );
 
   $(quiz_next_button).click(function (e) {
