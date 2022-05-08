@@ -128,16 +128,17 @@ function load_quiz(){
   }
   //this is for moving the steps into the correct order 
     else if (question["id"]==7){
+      // $("#question_6_left").remove();
       $("#drag_here").remove()
     let counter = 0
     let correct_counter = 1
     let next_button_counter = 0
     
     let row_for_everything = $("<div class='row'>");
-    let question_col = $("<div class='col-7'>");
-    let drop_here_col = $("<div class='col-5'>");
+    let question_col = $("<div class='col-12'>");
+  //  let drop_here_col = $("<div class='col-5'>");
     $(row_for_everything).append(question_col);
-    $(row_for_everything).append(drop_here_col);
+  //  $(row_for_everything).append(drop_here_col);
     let quiz_head = $(
       "<div class='row'>  <div class='col-10'>" +
         "Gin Rickey Quiz (" +
@@ -334,17 +335,17 @@ function load_quiz(){
   //all other questions
    else{
      incorrect_counter = 0 
-     
+    //  $("#question_6_left").remove()
      $("#drag_here").remove()
      $("#first_row").remove()
      $("#second_row").remove()
      $("#third_row").remove()
      $("#fourth_row").remove()
     let row_for_everything = $("<div class='row'>");
-    let question_col = $("<div class='col-5'>");
-    let image_col = $("<div class='col-7'>");
+    let question_col = $("<div class='col-12'>");
+  //  let image_col = $("<div class='col-7'>");
     $(row_for_everything).append(question_col);
-    $(row_for_everything).append(image_col);
+//    $(row_for_everything).append(image_col);
     let quiz_head = $(
       "<div class='row'>  <div class='col-10'>" +
         "Gin Rickey Quiz (" +
@@ -355,9 +356,9 @@ function load_quiz(){
     $("#quiz_header").append(quiz_head);
     
     let quiz_pic = $(
-      "<div class='col-10'>  <img src='" + question["image"] + "'> </div>  "
+      "<div class='col-12'>  <img src='" + question["image"] + "'> </div>  "
     );
-    $(image_col).append(quiz_pic);
+    $("#question_6_right").append(quiz_pic);
     let quiz_question = $(
       "<div class='row'>  <div class='col-12'>" +
         question["question"] +

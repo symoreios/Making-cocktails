@@ -13,37 +13,44 @@
 </script>
 <script></script>
 <div class="row">
-  <div class="col-4"> </div>
+  <div class="col-4"></div>
   <div class="col-4" id="quiz_header"></div>
 </div>
 <div class="row">
   <div class="col-6" id="quiz_quest"></div>
-  <div class="col-6" id="quiz_correct"> </div>
+  <div class="col-6" id="quiz_correct"></div>
 </div>
 <div class="row">
-<div class = "col-6">
-<div id="overall_row"></div>
-<div id="quiz_responses"></div>
-<div id="drag_me"></div>
-<div class="row">
-  <div class="col-6">
-    <div id="draggable_questions"></div>
+  <div class="col-6" id="question_6_left">
+    <div id="overall_row"></div>
+    <div id="quiz_responses"></div>
+    <div id="drag_me"></div>
+    <div class="row">
+      <div class="col-12">
+        <div id="draggable_questions"></div>
+      </div>
+      <div class="col-6">
+        <!-- <div id="droppable_spots">
+          <div id="first_row"></div>
+          <div id="second_row"></div>
+          <div id="third_row"></div>
+          <div id="fourth_row"></div>
+        </div> -->
+      </div>
+    </div>
   </div>
-  <div class="col-6">
+  <div class="col-6" id="question_6_right">
     <div id="droppable_spots">
       <div id="first_row"></div>
       <div id="second_row"></div>
       <div id="third_row"></div>
       <div id="fourth_row"></div>
     </div>
+    <div class="row justify-content-center">
+      <div class="col-12"><div id="drag_here"></div></div>
+    </div>
   </div>
 </div>
-</div>
-<div class = "col-6">
-<div class="row justify-content-center">
-  <div class="col-12"><div id="drag_here"></div></div>
-  </div></div></div>
-  <div id="quiz_image"></div>
-  <div id="next_button"></div>
-  {% endblock %}
-</div>
+<div id="quiz_image"></div>
+<div id="next_button"></div>
+{% endblock %}
