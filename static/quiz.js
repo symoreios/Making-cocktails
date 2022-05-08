@@ -66,7 +66,7 @@ function load_quiz(){
     let row_for_pictures = $("<div class='row'>")
     let row_for_drop = $("<div class='row'> <div class= 'col-12'>" +  "Drag ingredients here! </div> </div>")
     $.each(responses["image_list"], function (i, answer) {
-      let class_for_pic = $("<div class='drag_able col-2'> <p> <img src='" + answer + "'> </p> </div> ")
+      let class_for_pic = $("<div class='drag_able col-3'> <p> <img src='" + answer + "'> </p> </div> ")
       $(row_for_pictures).append(class_for_pic)
     });
     $(row_for_all).append(row_for_pictures)
